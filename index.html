@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معين نجم - السيرة الذاتية المهنية</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">معين نجم</div>
+            <div class="nav-links">
+                <a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+                <a href="#about" data-ar="نبذة" data-en="About">نبذة</a>
+                <a href="#education" data-ar="التعليم" data-en="Education">التعليم</a>
+                <a href="#experience" data-ar="الخبرات" data-en="Experience">الخبرات</a>
+                <a href="#certifications" data-ar="الشهادات" data-en="Certifications">الشهادات</a>
+                <a href="#skills" data-ar="المهارات" data-en="Skills">المهارات</a>
+                <a href="#deliverables" data-ar="المخرجات" data-en="Deliverables">المخرجات</a>
+                <a href="#awards" data-ar="الجوائز" data-en="Awards">الجوائز</a>
+                <a href="#contact" data-ar="التواصل" data-en="Contact">التواصل</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn-lang" onclick="toggleLanguage()" title="تبديل اللغة">
+                    <i class="fas fa-language"></i>
+                    <span id="lang-text">EN</span>
+                </button>
+                <button class="btn-download" onclick="downloadCV()">
+                    <i class="fas fa-download"></i> <span data-ar="تحميل السيرة الذاتية" data-en="Download CV">تحميل السيرة الذاتية</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page 1: Hero Section with Profile -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <!-- Profile Image and Info -->
+            <div class="hero-profile-card animate-fade-in">
+                <div class="profile-image-container">
+                    <img src="assets/images/moein.jpg" alt="معين نجم - Moein Najem" class="profile-image" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8Y2lyY2xlIGN4PSIxMDAiIGN5PSIxMDAiIHI9IjEwMCIgZmlsbD0iIzFlM2E4YSIvPgogIDxjaXJjbGUgY3g9IjEwMCIgY3k9Ijc1IiByPSIzNSIgZmlsbD0iI2ZmZiIvPgogIDxwYXRoIGQ9Ik0zMCAxODAgQzMwIDEzMCA2MCAxMjAgMTAwIDEyMCBDMTQwIDEyMCAxNzAgMTMwIDE3MCAxODAgWiIgZmlsbD0iI2ZmZiIvPgo8L3N2Zz4='">
+                </div>
+                <div class="profile-badge" data-ar="خبير معتمد | حكم جائزة SCXA" data-en="Certified Expert | SCXA Judge">خبير معتمد | حكم جائزة SCXA</div>
+                <h1 class="profile-name" data-ar="معين نجم" data-en="Moein Najem">معين نجم</h1>
+                <h2 class="profile-title" data-ar="خبير التميز المؤسسي وتحسين الخدمات" data-en="Corporate Excellence & Service Improvement Expert">خبير التميز المؤسسي وتحسين الخدمات</h2>
+                <p class="profile-subtitle" data-ar="إدارة المشاريع - التميز - الجودة - إدارة الأداء - مؤشرات الأداء - الاستراتيجية - تحسين الخدمات - تجربة العميل" data-en="Project Management - Excellence - Quality - Performance Management - KPI - Strategy - Service Improvement - CX">إدارة المشاريع - التميز - الجودة - إدارة الأداء - مؤشرات الأداء - الاستراتيجية - تحسين الخدمات - تجربة العميل</p>
+            </div>
+
+            <!-- Contact Icons Bar -->
+            <div class="contact-icons-bar animate-slide-in">
+                <a href="tel:0567889975" class="contact-icon-link" title="اتصل بي">
+                    <i class="fas fa-phone"></i>
+                </a>
+                <a href="https://wa.me/971567889975" class="contact-icon-link whatsapp" title="واتساب" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="mailto:Moein-najem@hotmail.com" class="contact-icon-link email" title="البريد الإلكتروني">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://linkedin.com/in/moein-najem" class="contact-icon-link linkedin" title="لينكد إن" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://instagram.com/moein.najem" class="contact-icon-link instagram" title="إنستغرام" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <span class="contact-icon-link location" title="دبي، الإمارات">
+                    <i class="fas fa-map-marker-alt"></i>
+                </span>
+                <span class="contact-icon-link golden-visa" title="الإقامة الذهبية">
+                    <i class="fas fa-id-card"></i>
+                </span>
+            </div>
+            
+            <!-- CTA Message -->
+            <div class="cta-message-compact animate-fade-in">
+                <p><strong data-ar="جاهز للمساهمة في تحقيق التميز المؤسسي" data-en="Ready to Contribute to Organizational Excellence">جاهز للمساهمة في تحقيق التميز المؤسسي</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 2: About Profile -->
+    <section id="about" class="profile-card-section">
+        <div class="container">
+            <div class="profile-card">
+                <h2 class="section-title" data-ar="نبذة عن معين نجم" data-en="About Moein Najem">نبذة عن معين نجم</h2>
+                <p class="profile-description" data-ar="معين نجم خبير استشاري متميز ومتخصص في مجالات التميز المؤسسي وإدارة المشاريع والجودة، يتمتع بخبرة واسعة تمتد لأكثر من 12 عاماً في العمل مع الجهات الحكومية الرائدة في دولة الإمارات العربية المتحدة والمملكة العربية السعودية. حاصل على العديد من الشهادات المهنية المعتمدة، ومعتمد كحكم لجائزة الشيخ خليفة للتميز الحكومي (SCXA)، وكمقيم رئيسي لبرنامج صفر بيروقراطية الحكومي." data-en="Moein Najem is a distinguished consultant specializing in organizational excellence, project management and quality, with extensive experience spanning over 12 years working with leading government entities in the UAE and Saudi Arabia. He holds numerous professional certifications and is certified as a judge for the Sheikh Khalifa Excellence Award (SCXA) and as a lead assessor for the Zero Government Bureaucracy program.">معين نجم خبير استشاري متميز ومتخصص في مجالات التميز المؤسسي وإدارة المشاريع والجودة، يتمتع بخبرة واسعة تمتد لأكثر من 12 عاماً في العمل مع الجهات الحكومية الرائدة في دولة الإمارات العربية المتحدة والمملكة العربية السعودية. حاصل على العديد من الشهادات المهنية المعتمدة، ومعتمد كحكم لجائزة الشيخ خليفة للتميز الحكومي (SCXA)، وكمقيم رئيسي لبرنامج صفر بيروقراطية الحكومي.</p>
+                <div class="profile-highlights">
+                    <div class="highlight-item">
+                        <i class="fas fa-star"></i>
+                        <span data-ar="خبرة +12 سنة في التميز المؤسسي" data-en="+12 Years Experience in Organizational Excellence">خبرة +12 سنة في التميز المؤسسي</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-award"></i>
+                        <span data-ar="حكم معتمد في جائزة SCXA" data-en="Certified SCXA Award Judge">حكم معتمد في جائزة SCXA</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-building"></i>
+                        <span data-ar="خبرة مع جهات حكومية رائدة" data-en="Experience with Leading Government Entities">خبرة مع جهات حكومية رائدة</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span data-ar="تطبيق معايير التميز المحلية والعالمية" data-en="Implementation of Local & International Excellence Standards">تطبيق معايير التميز المحلية والعالمية</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-users"></i>
+                        <span data-ar="تحسين تجربة العملاء" data-en="Customer Experience Enhancement">تحسين تجربة العملاء</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 3: Core Competencies -->
+    <section class="competencies-section">
+        <div class="container">
+            <h2 class="section-title" data-ar="التخصصات الأساسية والكفاءات المهنية" data-en="Core Competencies & Professional Skills">التخصصات الأساسية والكفاءات المهنية</h2>
+            <p class="section-intro" data-ar="مجموعة شاملة من الخبرات والمهارات المتخصصة في مجالات التميز المؤسسي وإدارة المشاريع وتحسين الخدمات" data-en="Comprehensive expertise and specialized skills in organizational excellence, project management and service improvement">مجموعة شاملة من الخبرات والمهارات المتخصصة في مجالات التميز المؤسسي وإدارة المشاريع وتحسين الخدمات، مكتسبة من خلال سنوات طويلة من العمل مع أبرز المؤسسات الحكومية في المنطقة.</p>
+            <div class="competencies-grid">
+                <div class="competency-card">
+                    <div class="card-icon"><i class="fas fa-trophy"></i></div>
+                    <h3 data-ar="التميز المؤسسي" data-en="Organizational Excellence">التميز المؤسسي</h3>
+                    <p data-ar="تطبيق نماذج التميز العالمية والمحلية وتحقيق الاعتمادات المرموقة" data-en="Implementing global and local excellence models and achieving prestigious accreditations">تطبيق نماذج التميز العالمية والمحلية وتحقيق الاعتمادات المرموقة</p>
+                </div>
+                <div class="competency-card">
+                    <div class="card-icon"><i class="fas fa-project-diagram"></i></div>
+                    <h3 data-ar="إدارة المشاريع" data-en="Project Management">إدارة المشاريع</h3>
+                    <p data-ar="خبرة متقدمة في إدارة المشاريع الاستشارية المعقدة من التخطيط حتى التسليم والتقييم" data-en="Advanced experience in managing complex consulting projects from planning to delivery and evaluation">خبرة متقدمة في إدارة المشاريع الاستشارية المعقدة من التخطيط حتى التسليم والتقييم</p>
+                </div>
+                <div class="competency-card">
+                    <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3 data-ar="إدارة الأداء" data-en="Performance Management">إدارة الأداء</h3>
+                    <p data-ar="تصميم وتطبيق أنظمة إدارة الأداء المؤسسي وبطاقات الأداء المتوازن" data-en="Designing and implementing institutional performance management systems and balanced scorecards">تصميم وتطبيق أنظمة إدارة الأداء المؤسسي وبطاقات الأداء المتوازن</p>
+                </div>
+                <div class="competency-card">
+                    <div class="card-icon"><i class="fas fa-certificate"></i></div>
+                    <h3 data-ar="الجودة" data-en="Quality">الجودة</h3>
+                    <p data-ar="إدارة أنظمة الجودة وتطبيق معايير ISO والمواصفات الدولية" data-en="Managing quality systems and implementing ISO standards and international specifications">إدارة أنظمة الجودة وتطبيق معايير ISO والمواصفات الدولية</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 4: Achievements & Stats -->
+    <section class="achievements-section">
+        <div class="container">
+            <h2 class="section-title" data-ar="الملف الشخصي والإنجازات" data-en="Profile & Achievements">الملف الشخصي والإنجازات</h2>
+            <p class="profile-description" data-ar="معين نجم خبير استشاري متميز ومتخصص في مجالات التميز المؤسسي وإدارة المشاريع والجودة" data-en="Moein Najem is a distinguished consultant specializing in organizational excellence, project management and quality">معين نجم خبير استشاري متميز ومتخصص في مجالات التميز المؤسسي وإدارة المشاريع والجودة، يتمتع بخبرة واسعة تمتد لأكثر من 12 عاماً في العمل مع الجهات الحكومية الرائدة في دولة الإمارات العربية المتحدة والمملكة العربية السعودية. حاصل على العديد من الشهادات المهنية المعتمدة، ومعتمد كحكم لجائزة الشيخ خليفة للتميز الحكومي (SCXA)، وكمقيم رئيسي لبرنامج صفر بيروقراطية الحكومي. يمتلك سجلاً حافلاً في قيادة وإنجاز مشاريع استراتيجية معقدة، وتحقيق اعتمادات دولية مرموقة، وتطبيق أفضل الممارسات العالمية في التميز المؤسسي وتجربة العميل.</p>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">+10</div>
+                    <p class="stat-label" data-ar="اعتماد دولي تم تحقيقها للجهات المختلفة" data-en="International accreditations achieved for various entities">اعتماد دولي تم تحقيقها للجهات المختلفة</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">+50</div>
+                    <p class="stat-label" data-ar="مشروع منجز مع جهات حكومية رائدة" data-en="Completed projects with leading government entities">مشروع منجز مع جهات حكومية رائدة</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">+12</div>
+                    <p class="stat-label" data-ar="سنة خبرة في التميز المؤسسي وإدارة المشاريع" data-en="Years of experience in organizational excellence and project management">سنة خبرة في التميز المؤسسي وإدارة المشاريع</p>
+                </div>
+            </div>
+            <div class="awards-preview">
+                <h3 data-ar="الاعتمادات والجوائز المحققة للجهات" data-en="Achieved Accreditations & Awards">الاعتمادات والجوائز المحققة للجهات</h3>
+                <div class="awards-badges">
+                    <span class="badge" data-ar="نظام التصنيف العالمي بالنجوم" data-en="Global Star Rating System">نظام التصنيف العالمي بالنجوم</span>
+                    <span class="badge" data-ar="جائزة الشيخ خليفة للتميز الحكومي" data-en="Sheikh Khalifa Government Excellence Award">جائزة الشيخ خليفة للتميز الحكومي</span>
+                    <span class="badge">ISO 9001</span>
+                    <span class="badge">ISO 10002</span>
+                    <span class="badge" data-ar="برنامج 7 نجوم" data-en="7 Stars Program">برنامج 7 نجوم</span>
+                    <span class="badge" data-ar="صفر بيروقراطية" data-en="Zero Bureaucracy">صفر بيروقراطية</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 5: Academic Qualifications -->
+    <section id="education" class="education-section">
+        <div class="container">
+            <h2 class="section-title" data-ar="المؤهلات الأكاديمية والتعليم" data-en="Academic Qualifications & Education">المؤهلات الأكاديمية والتعليم</h2>
+            <p class="section-intro" data-ar="مسيرة أكاديمية متدرجة تجمع بين الأسس النظرية والتطبيقات العملية" data-en="Progressive academic journey combining theoretical foundations and practical applications">مسيرة أكاديمية متدرجة تجمع بين الأسس النظرية والتطبيقات العملية في مجالات إدارة الأعمال والمشاريع.</p>
+            <div class="education-timeline">
+                <div class="education-item">
+                    <div class="education-badge" data-ar="جاري الدراسة" data-en="Current Student">جاري الدراسة</div>
+                    <h3 data-ar="ماجستير إدارة الأعمال (إدارة المشاريع - طالب حالياً)" data-en="MBA - Project Management (Current Student)">ماجستير إدارة الأعمال (إدارة المشاريع - طالب حالياً)</h3>
+                    <p class="institution">جامعة ميدوشن | Midocean University</p>
+                    <p class="degree-en">MBA - Project Management (Current Student)</p>
+                    <p class="description" data-ar="برنامج ماجستير متخصص يركز على إدارة المشاريع الاستراتيجية والقيادة المؤسسية، يهدف إلى تعزيز المهارات الإدارية المتقدمة والقدرة على قيادة التحولات المؤسسية الكبرى وإدارة المشاريع المعقدة متعددة الأطراف." data-en="A specialized MBA program focusing on strategic project management and organizational leadership, aimed at enhancing advanced management skills and the ability to lead major organizational transformations and manage complex multi-stakeholder projects.">برنامج ماجستير متخصص يركز على إدارة المشاريع الاستراتيجية والقيادة المؤسسية، يهدف إلى تعزيز المهارات الإدارية المتقدمة والقدرة على قيادة التحولات المؤسسية الكبرى وإدارة المشاريع المعقدة متعددة الأطراف.</p>
+                </div>
+                <div class="education-item">
+                    <div class="education-badge" data-ar="مكتمل" data-en="Completed">مكتمل</div>
+                    <h3 data-ar="ماجستير مصغر – إدارة الأعمال والإدارة العامة" data-en="Mini MBA – Business Administration & General Management">ماجستير مصغر – إدارة الأعمال والإدارة العامة</h3>
+                    <p class="institution">المعهد الدولي لإدارة الأعمال (IBMI)</p>
+                    <p class="degree-en">International Business Management Institute</p>
+                    <p class="description" data-ar="برنامج تأهيل متخصص يغطي مجالات الإدارة الاستراتيجية، التخطيط المؤسسي، إدارة الأعمال الدولية، والقيادة التنفيذية، مع التركيز على تطبيق أفضل الممارسات الإدارية في بيئة الأعمال المعاصرة." data-en="A specialized qualification program covering strategic management, organizational planning, international business management, and executive leadership, with focus on applying best management practices in contemporary business environment.">برنامج تأهيل متخصص يغطي مجالات الإدارة الاستراتيجية، التخطيط المؤسسي، إدارة الأعمال الدولية، والقيادة التنفيذية، مع التركيز على تطبيق أفضل الممارسات الإدارية في بيئة الأعمال المعاصرة.</p>
+                </div>
+                <div class="education-item">
+                    <div class="education-badge" data-ar="مكتمل" data-en="Completed">مكتمل</div>
+                    <h3 data-ar="بكالوريوس – الأدب الإنجليزي والترجمة" data-en="Bachelor – English Literature & Translation">بكالوريوس – الأدب الإنجليزي والترجمة</h3>
+                    <p class="institution">جامعة دمشق | Damascus University</p>
+                    <p class="description" data-ar="شهادة جامعية في الأدب الإنجليزي والترجمة، وفرت أساساً قوياً ومتيناً في مهارات التواصل اللغوي، الترجمة الاحترافية، التحليل النقدي، والقدرة على التفاعل بفعالية مع الثقافات المختلفة والجهات الدولية، مما يدعم العمل الاستشاري مع المعايير والنماذج العالمية." data-en="A university degree in English Literature and Translation, providing a strong foundation in linguistic communication skills, professional translation, critical analysis, and the ability to effectively interact with different cultures and international entities, supporting consulting work with global standards and models.">شهادة جامعية في الأدب الإنجليزي والترجمة، وفرت أساساً قوياً ومتيناً في مهارات التواصل اللغوي، الترجمة الاحترافية، التحليل النقدي، والقدرة على التفاعل بفعالية مع الثقافات المختلفة والجهات الدولية، مما يدعم العمل الاستشاري مع المعايير والنماذج العالمية.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 6: Current Experience -->
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <h2 class="section-title" data-ar="الخبرة الحالية" data-en="Current Experience">الخبرة الحالية</h2>
+            <div class="experience-header">
+                <h3 data-ar="IMPACT IN – مدير التميز والجودة" data-en="IMPACT IN – Excellence & Quality Director">IMPACT IN – مدير التميز والجودة</h3>
+                <span class="date-badge" data-ar="أغسطس 2024 - حتى الآن" data-en="August 2024 - Present">أغسطس 2024 - حتى الآن</span>
+            </div>
+            <p class="experience-intro" data-ar="يشغل حالياً منصب مدير التميز والجودة في شركة IMPACT IN الاستشارية، حيث يقود مشاريع استراتيجية لتحقيق التميز المؤسسي للجهات الحكومية والخاصة، مع التركيز على تطبيق معايير التميز العالمية والمحلية وتحقيق الاعتمادات الدولية." data-en="Currently serving as Excellence & Quality Director at IMPACT IN Consulting, leading strategic projects to achieve organizational excellence for government and private entities, focusing on implementing international and local excellence standards and achieving global accreditations.">يشغل حالياً منصب مدير التميز والجودة في شركة IMPACT IN الاستشارية، حيث يقود مشاريع استراتيجية لتحقيق التميز المؤسسي للجهات الحكومية والخاصة، مع التركيز على تطبيق معايير التميز العالمية والمحلية وتحقيق الاعتمادات الدولية.</p>
+            
+            <h4 class="projects-subtitle" data-ar="المشاريع الرئيسية المنفذة:" data-en="Key Executed Projects:">المشاريع الرئيسية المنفذة:</h4>
+            <div class="projects-grid">
+                <div class="project-card" data-number="01">
+                    <div class="project-number">01</div>
+                    <h4 data-ar="جائزة عجمان للتميز - برنامج 7 نجوم" data-en="Ajman Excellence Award - 7 Stars Program">جائزة عجمان للتميز - برنامج 7 نجوم</h4>
+                    <p><strong data-ar="شرطة عجمان" data-en="Ajman Police">شرطة عجمان</strong></p>
+                    <p class="project-details" data-ar="قيادة المشروع الشامل لتطبيق معايير جائزة عجمان للتميز ونظام التصنيف العالمي بالنجوم (7 نجوم) للقيادة العامة لشرطة عجمان، بما يشمل تقييم شامل للأداء المؤسسي، تطوير خطط التحسين، وتحقيق التميز في جميع معايير الجائزة." data-en="Leading a comprehensive project to implement Ajman Excellence Award standards and the Global Star Rating System (7 Stars) for Ajman Police General Command, including comprehensive organizational performance assessment, development of improvement plans, and achieving excellence in all award criteria.">قيادة المشروع الشامل لتطبيق معايير جائزة عجمان للتميز ونظام التصنيف العالمي بالنجوم (7 نجوم) للقيادة العامة لشرطة عجمان، بما يشمل تقييم شامل للأداء المؤسسي، تطوير خطط التحسين، وتحقيق التميز في جميع معايير الجائزة.</p>
+                    <div class="project-tags">
+                        <span class="tag" data-ar="التميز المؤسسي" data-en="Organizational Excellence">التميز المؤسسي</span>
+                        <span class="tag" data-ar="جوائز" data-en="Awards">جوائز</span>
+                        <span class="tag" data-ar="7 نجوم" data-en="7 Stars">7 نجوم</span>
+                    </div>
+                </div>
+                <div class="project-card" data-number="02">
+                    <div class="project-number">02</div>
+                    <h4 data-ar="برنامج 7 نجوم للخدمات" data-en="7 Stars Service Program">برنامج 7 نجوم للخدمات</h4>
+                    <p><strong data-ar="شرطة عجمان" data-en="Ajman Police">شرطة عجمان</strong></p>
+                    <p class="project-details" data-ar="تطبيق نظام التصنيف العالمي بالنجوم على مراكز الخدمة والإدارات الرئيسية، شمل تحليل رحلة العميل، تحسين الخدمات، تطوير معايير الأداء، وتدريب الفرق على تطبيق أفضل ممارسات خدمة المتعاملين." data-en="Implementing the Global Star Rating System for service centers and main departments, including customer journey analysis, service improvement, performance standards development, and training teams on best practices in customer service.">تطبيق نظام التصنيف العالمي بالنجوم على مراكز الخدمة والإدارات الرئيسية، شمل تحليل رحلة العميل، تحسين الخدمات، تطوير معايير الأداء، وتدريب الفرق على تطبيق أفضل ممارسات خدمة المتعاملين.</p>
+                    <div class="project-tags">
+                        <span class="tag" data-ar="تصنيف الخدمات" data-en="Service Classification">تصنيف الخدمات</span>
+                        <span class="tag" data-ar="تحسين العمليات" data-en="Process Improvement">تحسين العمليات</span>
+                    </div>
+                </div>
+                <div class="project-card" data-number="03">
+                    <div class="project-number">03</div>
+                    <h4 data-ar="برنامج 7 نجوم" data-en="7 Stars Program">برنامج 7 نجوم</h4>
+                    <p><strong data-ar="وزارة الصناعة والتكنولوجيا المتقدمة" data-en="Ministry of Industry and Advanced Technology">وزارة الصناعة والتكنولوجيا المتقدمة</strong></p>
+                    <p class="project-details" data-ar="تنفيذ مشروع متكامل لتطبيق نظام التصنيف العالمي بالنجوم على خدمات الوزارة، تضمن إعادة تصميم رحلات العملاء، رفع مستوى الخدمات الحكومية، وتحقيق معايير التميز في تقديم الخدمات للمتعاملين." data-en="Implementing an integrated project to apply the Global Star Rating System to ministry services, including redesigning customer journeys, elevating government service levels, and achieving excellence standards in service delivery to customers.">تنفيذ مشروع متكامل لتطبيق نظام التصنيف العالمي بالنجوم على خدمات الوزارة، تضمن إعادة تصميم رحلات العملاء، رفع مستوى الخدمات الحكومية، وتحقيق معايير التميز في تقديم الخدمات للمتعاملين.</p>
+                    <div class="project-tags">
+                        <span class="tag" data-ar="تحسين الخدمات" data-en="Service Improvement">تحسين الخدمات</span>
+                        <span class="tag" data-ar="رحلة العميل" data-en="Customer Journey">رحلة العميل</span>
+                    </div>
+                </div>
+                <div class="project-card" data-number="04">
+                    <div class="project-number">04</div>
+                    <h4 data-ar="تطوير نظام إدارة الموارد البشرية" data-en="HR Management System Development">تطوير نظام إدارة الموارد البشرية</h4>
+                    <p><strong data-ar="مشاريع متعددة" data-en="Multiple Projects">مشاريع متعددة</strong></p>
+                    <p class="project-details" data-ar="تصميم وتطبيق أنظمة متكاملة لإدارة الموارد البشرية تشمل تطوير الهياكل التنظيمية، سياسات الموارد البشرية، أنظمة تقييم الأداء، وبرامج تطوير المواهب والقدرات المؤسسية." data-en="Designing and implementing integrated HR management systems including organizational structure development, HR policies, performance evaluation systems, and talent and institutional capacity development programs.">تصميم وتطبيق أنظمة متكاملة لإدارة الموارد البشرية تشمل تطوير الهياكل التنظيمية، سياسات الموارد البشرية، أنظمة تقييم الأداء، وبرامج تطوير المواهب والقدرات المؤسسية.</p>
+                    <div class="project-tags">
+                        <span class="tag">HR</span>
+                        <span class="tag" data-ar="تطوير مؤسسي" data-en="Organizational Development">تطوير مؤسسي</span>
+                    </div>
+                </div>
+                <div class="project-card" data-number="05">
+                    <div class="project-number">05</div>
+                    <h4 data-ar="شهادات ISO المتخصصة" data-en="Specialized ISO Certifications">شهادات ISO المتخصصة</h4>
+                    <p><strong data-ar="جهات متعددة" data-en="Multiple Entities">جهات متعددة</strong></p>
+                    <p class="project-details" data-ar="قيادة مشاريع الحصول على شهادات ISO المتخصصة (ISO 9001 لإدارة الجودة، ISO 10002 لإدارة شكاوى العملاء، وغيرها)، شملت تطوير الأنظمة، توثيق الإجراءات، التدريب، والمراجعات الداخلية." data-en="Leading projects to obtain specialized ISO certifications (ISO 9001 for Quality Management, ISO 10002 for Customer Complaint Management, and others), including system development, procedure documentation, training, and internal audits.">قيادة مشاريع الحصول على شهادات ISO المتخصصة (ISO 9001 لإدارة الجودة، ISO 10002 لإدارة شكاوى العملاء، وغيرها)، شملت تطوير الأنظمة، توثيق الإجراءات، التدريب، والمراجعات الداخلية.</p>
+                    <div class="project-tags">
+                        <span class="tag">ISO 9001</span>
+                        <span class="tag">ISO 10002</span>
+                        <span class="tag" data-ar="جودة" data-en="Quality">جودة</span>
+                    </div>
+                </div>
+                <div class="project-card" data-number="06">
+                    <div class="project-number">06</div>
+                    <h4 data-ar="صفر بيروقراطية حكومية" data-en="Zero Government Bureaucracy">صفر بيروقراطية حكومية</h4>
+                    <p><strong data-ar="مقيم معتمد" data-en="Certified Assessor">مقيم معتمد</strong></p>
+                    <p class="project-details" data-ar="المشاركة كمقيم رئيسي معتمد في برنامج صفر بيروقراطية الحكومي، لتقييم الجهات الحكومية وفق معايير البرنامج، تحليل الإجراءات الحكومية، وتقديم التوصيات لتبسيط وتسريع الخدمات الحكومية." data-en="Participating as a certified lead assessor in the Zero Government Bureaucracy program, evaluating government entities according to program standards, analyzing government procedures, and providing recommendations to simplify and accelerate government services.">المشاركة كمقيم رئيسي معتمد في برنامج صفر بيروقراطية الحكومي، لتقييم الجهات الحكومية وفق معايير البرنامج، تحليل الإجراءات الحكومية، وتقديم التوصيات لتبسيط وتسريع الخدمات الحكومية.</p>
+                    <div class="project-tags">
+                        <span class="tag" data-ar="تبسيط الإجراءات" data-en="Procedure Simplification">تبسيط الإجراءات</span>
+                        <span class="tag" data-ar="تقييم" data-en="Assessment">تقييم</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 7-8: Ministry of Health Experience -->
+    <section class="experience-section ministry-section">
+        <div class="container">
+            <div class="experience-header">
+                <div>
+                    <div class="role-badges">
+                        <span class="role-badge" data-ar="خبير نظام التصنيف العالمي بالنجوم" data-en="Global Star Rating System Expert">خبير نظام التصنيف العالمي بالنجوم</span>
+                        <span class="role-badge" data-ar="صفر بيروقراطية حكومية - مقيم رئيسي" data-en="Zero Bureaucracy - Lead Assessor">صفر بيروقراطية حكومية - مقيم رئيسي</span>
+                    </div>
+                    <h3 data-ar="وزارة الصحة ووقاية المجتمع - خبير التميز المؤسسي وتحسين الخدمات" data-en="Ministry of Health and Prevention - Organizational Excellence & Service Improvement Expert">وزارة الصحة ووقاية المجتمع - خبير التميز المؤسسي وتحسين الخدمات</h3>
+                </div>
+                <span class="date-badge" data-ar="يوليو 2022 - نوفمبر 2024" data-en="July 2022 - November 2024">يوليو 2022 - نوفمبر 2024</span>
+            </div>
+
+            <div class="achievements-highlights">
+                <div class="achievement-box">
+                    <i class="fas fa-globe"></i>
+                    <span data-ar="تطبيق معايير عالمية" data-en="Implementing Global Standards">تطبيق معايير عالمية</span>
+                </div>
+                <div class="achievement-box">
+                    <i class="fas fa-building"></i>
+                    <span data-ar="تأسيس قسمين استراتيجيين" data-en="Establishing Two Strategic Departments">تأسيس قسمين استراتيجيين</span>
+                </div>
+                <div class="achievement-box">
+                    <i class="fas fa-tools"></i>
+                    <span data-ar="إعادة هندسة 151 خدمة" data-en="Reengineering 151 Services">إعادة هندسة 151 خدمة</span>
+                </div>
+                <div class="achievement-box">
+                    <i class="fas fa-lightbulb"></i>
+                    <span data-ar="التصميم والابتكار" data-en="Design & Innovation">التصميم والابتكار</span>
+                </div>
+            </div>
+
+            <div class="responsibilities-list">
+                <div class="responsibility-item">
+                    <h4><span class="number" data-ar="أولاً:" data-en="First:">أولاً:</span> <span data-ar="مدير مشروع إعادة هندسة الخدمات" data-en="Service Reengineering Project Manager">مدير مشروع إعادة هندسة الخدمات</span></h4>
+                    <ul>
+                        <li data-ar="قيادة مشروع شامل لإعادة تصميم وتحسين 151 خدمة حكومية" data-en="Leading a comprehensive project to redesign and improve 151 government services">قيادة مشروع شامل لإعادة تصميم وتحسين 151 خدمة حكومية</li>
+                        <li data-ar="تطبيق منهجيات التصميم المرتكز على الإنسان (Human-Centered Design)" data-en="Applying Human-Centered Design methodologies">تطبيق منهجيات التصميم المرتكز على الإنسان (Human-Centered Design)</li>
+                        <li data-ar="تحليل رحلة العميل وتحديد نقاط الألم وفرص التحسين" data-en="Analyzing customer journey and identifying pain points and improvement opportunities">تحليل رحلة العميل وتحديد نقاط الألم وفرص التحسين</li>
+                        <li data-ar="تطوير نماذج أولية واختبارها مع المستخدمين" data-en="Developing prototypes and testing them with users">تطوير نماذج أولية واختبارها مع المستخدمين</li>
+                    </ul>
+                </div>
+
+                <div class="responsibility-item">
+                    <h4><span class="number" data-ar="ثانياً:" data-en="Second:">ثانياً:</span> <span data-ar="تأسيس قسم قيادة الخدمات" data-en="Establishing Service Leadership Department">تأسيس قسم قيادة الخدمات</span></h4>
+                    <ul>
+                        <li data-ar="إنشاء وتأسيس قسم متخصص لقيادة وتحسين الخدمات الحكومية" data-en="Creating and establishing a specialized department for leading and improving government services">إنشاء وتأسيس قسم متخصص لقيادة وتحسين الخدمات الحكومية</li>
+                        <li data-ar="تطوير استراتيجيات وسياسات إدارة الخدمات" data-en="Developing service management strategies and policies">تطوير استراتيجيات وسياسات إدارة الخدمات</li>
+                        <li data-ar="بناء فريق عمل متخصص وتدريبه على أفضل الممارسات" data-en="Building a specialized team and training it on best practices">بناء فريق عمل متخصص وتدريبه على أفضل الممارسات</li>
+                        <li data-ar="وضع معايير قياس جودة الخدمات ومتابعة الأداء" data-en="Setting service quality measurement standards and performance monitoring">وضع معايير قياس جودة الخدمات ومتابعة الأداء</li>
+                    </ul>
+                </div>
+
+                <div class="responsibility-item">
+                    <h4><span class="number" data-ar="ثالثاً:" data-en="Third:">ثالثاً:</span> <span data-ar="تأسيس قسم الاستدامة والمسؤولية الاجتماعية" data-en="Establishing Sustainability and Social Responsibility Department">تأسيس قسم الاستدامة والمسؤولية الاجتماعية</span></h4>
+                    <ul>
+                        <li data-ar="تأسيس قسم جديد لتعزيز الاستدامة المؤسسية" data-en="Establishing a new department to enhance institutional sustainability">تأسيس قسم جديد لتعزيز الاستدامة المؤسسية</li>
+                        <li data-ar="تطوير استراتيجية الاستدامة والمسؤولية الاجتماعية للوزارة" data-en="Developing ministry sustainability and social responsibility strategy">تطوير استراتيجية الاستدامة والمسؤولية الاجتماعية للوزارة</li>
+                        <li data-ar="تنفيذ مبادرات بيئية واجتماعية مبتكرة" data-en="Implementing innovative environmental and social initiatives">تنفيذ مبادرات بيئية واجتماعية مبتكرة</li>
+                        <li data-ar="قياس الأثر الاجتماعي والبيئي للمشاريع والخدمات" data-en="Measuring social and environmental impact of projects and services">قياس الأثر الاجتماعي والبيئي للمشاريع والخدمات</li>
+                    </ul>
+                </div>
+
+                <div class="responsibility-item">
+                    <h4><span class="number" data-ar="رابعاً:" data-en="Fourth:">رابعاً:</span> <span data-ar="مدير مشروع مبادرة تجميع الاستدامة" data-en="Sustainability Aggregation Initiative Project Manager">مدير مشروع مبادرة تجميع الاستدامة</span></h4>
+                    <ul>
+                        <li data-ar="قيادة مبادرة شاملة لتجميع وتوحيد جهود الاستدامة" data-en="Leading a comprehensive initiative to aggregate and unify sustainability efforts">قيادة مبادرة شاملة لتجميع وتوحيد جهود الاستدامة</li>
+                        <li data-ar="تطوير مؤشرات أداء لقياس التقدم في الاستدامة" data-en="Developing KPIs to measure sustainability progress">تطوير مؤشرات أداء لقياس التقدم في الاستدامة</li>
+                        <li data-ar="التنسيق مع مختلف الجهات الداخلية والخارجية" data-en="Coordinating with various internal and external entities">التنسيق مع مختلف الجهات الداخلية والخارجية</li>
+                        <li data-ar="إعداد تقارير دورية عن إنجازات الاستدامة" data-en="Preparing periodic reports on sustainability achievements">إعداد تقارير دورية عن إنجازات الاستدامة</li>
+                    </ul>
+                </div>
+
+                <div class="responsibility-item">
+                    <h4><span class="number" data-ar="خامساً:" data-en="Fifth:">خامساً:</span> <span data-ar="نموذج التميز الحكومي (GEM 2.1)" data-en="Government Excellence Model (GEM 2.1)">نموذج التميز الحكومي (GEM 2.1)</span></h4>
+                    <ul>
+                        <li data-ar="تطبيق معايير نموذج التميز الحكومي الإماراتي الإصدار 2.1" data-en="Implementing UAE Government Excellence Model version 2.1 standards">تطبيق معايير نموذج التميز الحكومي الإماراتي الإصدار 2.1</li>
+                        <li data-ar="إجراء تقييم ذاتي شامل لأداء الوزارة" data-en="Conducting comprehensive self-assessment of ministry performance">إجراء تقييم ذاتي شامل لأداء الوزارة</li>
+                        <li data-ar="تطوير خطط تحسين بناءً على فجوات التميز" data-en="Developing improvement plans based on excellence gaps">تطوير خطط تحسين بناءً على فجوات التميز</li>
+                        <li data-ar="التحضير للجوائز والاعتمادات الحكومية" data-en="Preparing for government awards and accreditations">التحضير للجوائز والاعتمادات الحكومية</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 9-10: Ethos Experience -->
+    <section class="experience-section ethos-section">
+        <div class="container">
+            <div class="experience-header">
+                <h3 data-ar="مدير التعلم والتطوير الاستشاري - Ethos Integrated Solutions" data-en="Learning & Development Consulting Manager - Ethos Integrated Solutions">مدير التعلم والتطوير الاستشاري - Ethos Integrated Solutions</h3>
+                <span class="date-badge" data-ar="نوفمبر 2017 - نوفمبر 2022" data-en="November 2017 - November 2022">نوفمبر 2017 - نوفمبر 2022</span>
+            </div>
+
+            <p class="experience-intro" data-ar="شغل منصب مدير التعلم والتطوير الاستشاري في شركة إيثوس للحلول المتكاملة، إحدى الشركات الرائدة في مجال الاستشارات الإدارية والتميز المؤسسي في دولة الإمارات. خلال هذه الفترة، قاد وأشرف على أكثر من 21 مشروعاً استشارياً كبيراً مع أبرز الجهات الحكومية الاتحادية والمحلية، محققاً نسبة نجاح 100% في جميع المشاريع المنفذة." data-en="Served as Learning & Development Consulting Manager at Ethos Integrated Solutions, one of the leading companies in management consulting and organizational excellence in the UAE. During this period, led and supervised over 21 major consulting projects with prominent federal and local government entities, achieving a 100% success rate in all executed projects.">شغل منصب مدير التعلم والتطوير الاستشاري في شركة إيثوس للحلول المتكاملة، إحدى الشركات الرائدة في مجال الاستشارات الإدارية والتميز المؤسسي في دولة الإمارات. خلال هذه الفترة، قاد وأشرف على أكثر من 21 مشروعاً استشارياً كبيراً مع أبرز الجهات الحكومية الاتحادية والمحلية، محققاً نسبة نجاح 100% في جميع المشاريع المنفذة.</p>
+
+            <div class="ethos-stats">
+                <div class="stat-box">
+                    <div class="stat-icon"><i class="fas fa-check-circle"></i></div>
+                    <div class="stat-value">100%</div>
+                    <div class="stat-label" data-ar="نسبة نجاح المشاريع" data-en="Project Success Rate">نسبة نجاح المشاريع</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon"><i class="fas fa-calendar-alt"></i></div>
+                    <div class="stat-value">5</div>
+                    <div class="stat-label" data-ar="سنوات من التميز" data-en="Years of Excellence">سنوات من التميز</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-icon"><i class="fas fa-project-diagram"></i></div>
+                    <div class="stat-value">+21</div>
+                    <div class="stat-label" data-ar="مشروع استشاري منجز" data-en="Completed Consulting Projects">مشروع استشاري منجز</div>
+                </div>
+            </div>
+
+            <h4 class="projects-category-title" data-ar="مشاريع نظام التصنيف العالمي بالنجوم والتميز:" data-en="Global Star Rating System & Excellence Projects:">مشاريع نظام التصنيف العالمي بالنجوم والتميز:</h4>
+            <div class="major-projects-grid">
+                <div class="major-project-card">
+                    <div class="project-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h4 data-ar="شرطة أبوظبي" data-en="Abu Dhabi Police">شرطة أبوظبي</h4>
+                    <p><strong data-ar="مشروع نظام التصنيف العالمي بالنجوم للخدمات" data-en="Global Star Rating System Project for Services">مشروع نظام التصنيف العالمي بالنجوم للخدمات</strong></p>
+                    <p class="project-details-small" data-ar="تطبيق شامل لنظام التصنيف العالمي بالنجوم على خدمات القيادة العامة لشرطة أبوظبي، شمل تحليل وتقييم الخدمات، تطوير معايير الأداء، وتدريب الفرق على أفضل الممارسات العالمية." data-en="Comprehensive implementation of the Global Star Rating System for Abu Dhabi Police services, including service analysis and evaluation, performance standards development, and training teams on global best practices.">تطبيق شامل لنظام التصنيف العالمي بالنجوم على خدمات القيادة العامة لشرطة أبوظبي، شمل تحليل وتقييم الخدمات، تطوير معايير الأداء، وتدريب الفرق على أفضل الممارسات العالمية.</p>
+                </div>
+                <div class="major-project-card">
+                    <div class="project-icon"><i class="fas fa-balance-scale"></i></div>
+                    <h4 data-ar="وزارة الداخلية" data-en="Ministry of Interior">وزارة الداخلية</h4>
+                    <p><strong data-ar="تنفيذ كامل برنامج 7 نجوم لمراكز إسعاد المتعاملين" data-en="Complete Implementation of 7 Stars Program for Customer Happiness Centers">تنفيذ كامل برنامج 7 نجوم لمراكز إسعاد المتعاملين</strong></p>
+                    <p class="project-details-small" data-ar="قيادة التنفيذ الكامل لبرنامج 7 نجوم لمراكز إسعاد المتعاملين، يشمل جميع ركائز البرنامج من استشارات، تقييم، قياس، وتطوير." data-en="Leading complete implementation of 7 Stars program for customer happiness centers, including all program pillars: consultancy, evaluation, measurement, and development.">قيادة التنفيذ الكامل لبرنامج 7 نجوم لمراكز إسعاد المتعاملين، يشمل جميع ركائز البرنامج من استشارات، تقييم، قياس، وتطوير.</p>
+                </div>
+                <div class="major-project-card">
+                    <div class="project-icon"><i class="fas fa-hospital"></i></div>
+                    <h4 data-ar="مؤسسة الإمارات للخدمات الصحية" data-en="Emirates Health Services">مؤسسة الإمارات للخدمات الصحية</h4>
+                    <p><strong data-ar="ركيزتان: الاستشارات والقياس لنظام التصنيف العالمي" data-en="Two Pillars: Consultancy and Measurement for Global Rating System">ركيزتان: الاستشارات والقياس لنظام التصنيف العالمي</strong></p>
+                    <p class="project-details-small" data-ar="تقديم الاستشارات الفنية المتخصصة وإجراء القياسات الميدانية لتطبيق نظام التصنيف بالنجوم على المنشآت الصحية التابعة للمؤسسة." data-en="Providing specialized technical consultancy and conducting field measurements for implementing star rating system in health facilities.">تقديم الاستشارات الفنية المتخصصة وإجراء القياسات الميدانية لتطبيق نظام التصنيف بالنجوم على المنشآت الصحية التابعة للمؤسسة.</p>
+                </div>
+                <div class="major-project-card">
+                    <div class="project-icon"><i class="fas fa-heartbeat"></i></div>
+                    <h4 data-ar="وزارة الصحة ووقاية المجتمع" data-en="Ministry of Health and Prevention">وزارة الصحة ووقاية المجتمع</h4>
+                    <p><strong data-ar="3 مشاريع شاملة تتضمن ركائز: الاستشارات، التقييم، والقياس" data-en="3 Comprehensive Projects Including: Consultancy, Evaluation, and Measurement">3 مشاريع شاملة تتضمن ركائز: الاستشارات، التقييم، والقياس</strong></p>
+                    <p class="project-details-small" data-ar="تنفيذ ثلاثة مشاريع متكاملة لوزارة الصحة، شملت جميع جوانب تطبيق نظام التصنيف بالنجوم بما في ذلك الاستشارات الفنية، التقييم المؤسسي، والقياسات الميدانية." data-en="Implementing three integrated projects for Ministry of Health, covering all aspects of star rating system including technical consultancy, institutional evaluation, and field measurements.">تنفيذ ثلاثة مشاريع متكاملة لوزارة الصحة، شملت جميع جوانب تطبيق نظام التصنيف بالنجوم بما في ذلك الاستشارات الفنية، التقييم المؤسسي، والقياسات الميدانية.</p>
+                </div>
+            </div>
+
+            <h4 class="projects-category-title" data-ar="مشاريع إضافية مع جهات حكومية رائدة:" data-en="Additional Projects with Leading Government Entities:">مشاريع إضافية مع جهات حكومية رائدة:</h4>
+            <div class="additional-projects-grid">
+                <div class="small-project-card">
+                    <div class="project-num">01</div>
+                    <h5 data-ar="شرطة دبي" data-en="Dubai Police">شرطة دبي</h5>
+                    <p><strong data-ar="تنفيذ كامل برنامج 7 نجوم لأربعة مراكز شرطة" data-en="Complete Implementation of 7 Stars Program for Four Police Stations">تنفيذ كامل برنامج 7 نجوم لأربعة مراكز شرطة</strong></p>
+                    <p class="mini-details" data-ar="مشروع شامل لتطبيق نظام التصنيف العالمي بالنجوم على 4 مراكز شرطة رئيسية، شمل تحليل الخدمات، تطوير المعايير، التدريب، والقياس الميداني." data-en="Comprehensive project to implement Global Star Rating System for 4 main police stations, including service analysis, standards development, training, and field measurement.">مشروع شامل لتطبيق نظام التصنيف العالمي بالنجوم على 4 مراكز شرطة رئيسية، شمل تحليل الخدمات، تطوير المعايير، التدريب، والقياس الميداني.</p>
+                </div>
+                <div class="small-project-card">
+                    <div class="project-num">02</div>
+                    <h5 data-ar="الهيئة الاتحادية للهوية والجنسية والجمارك وأمن المنافذ" data-en="Federal Authority for Identity, Citizenship, Customs & Port Security">الهيئة الاتحادية للهوية والجنسية والجمارك وأمن المنافذ</h5>
+                    <p><strong data-ar="مراكز إسعاد المتعاملين مع مخرجات مؤسسية شاملة" data-en="Customer Happiness Centers with Comprehensive Institutional Outputs">مراكز إسعاد المتعاملين مع مخرجات مؤسسية شاملة</strong></p>
+                    <p class="mini-details" data-ar="تطوير مراكز إسعاد المتعاملين وفق أعلى المعايير، مع تطوير دليل خدمات شامل، معايير الأداء، ومؤشرات القياس." data-en="Developing customer happiness centers according to highest standards, with comprehensive service manual, performance standards, and measurement indicators.">تطوير مراكز إسعاد المتعاملين وفق أعلى المعايير، مع تطوير دليل خدمات شامل، معايير الأداء، ومؤشرات القياس.</p>
+                </div>
+                <div class="small-project-card">
+                    <div class="project-num">03</div>
+                    <h5 data-ar="هيئة الصحة بدبي" data-en="Dubai Health Authority">هيئة الصحة بدبي</h5>
+                    <p><strong data-ar="مركز إسعاد المتعاملين وتطوير ميثاق المتعاملين - 2019" data-en="Customer Happiness Center and Customer Charter Development - 2019">مركز إسعاد المتعاملين وتطوير ميثاق المتعاملين - 2019</strong></p>
+                    <p class="mini-details" data-ar="تصميم وتطوير مركز إسعاد متعاملين متكامل، مع تطوير ميثاق المتعاملين وفق أفضل الممارسات العالمية في خدمة العملاء." data-en="Designing and developing an integrated customer happiness center, with customer charter development following global best practices in customer service.">تصميم وتطوير مركز إسعاد متعاملين متكامل، مع تطوير ميثاق المتعاملين وفق أفضل الممارسات العالمية في خدمة العملاء.</p>
+                </div>
+                <div class="small-project-card">
+                    <div class="project-num">04</div>
+                    <h5 data-ar="هيئة الطرق والمواصلات دبي" data-en="Roads and Transport Authority Dubai">هيئة الطرق والمواصلات دبي</h5>
+                    <p><strong data-ar="ثلاثة مراكز إسعاد متعاملين بالمعيار الجديد - 2020" data-en="Three Customer Happiness Centers with New Standards - 2020">ثلاثة مراكز إسعاد متعاملين بالمعيار الجديد - 2020</strong></p>
+                    <p class="mini-details" data-ar="تطبيق المعيار الجديد لنظام التصنيف بالنجوم على 3 مراكز رئيسية، مع التركيز على التحول الرقمي وتحسين تجربة المتعاملين." data-en="Implementing the new star rating system standard on 3 main centers, focusing on digital transformation and improving customer experience.">تطبيق المعيار الجديد لنظام التصنيف بالنجوم على 3 مراكز رئيسية، مع التركيز على التحول الرقمي وتحسين تجربة المتعاملين.</p>
+                </div>
+                <div class="small-project-card">
+                    <div class="project-num">05</div>
+                    <h5 data-ar="دائرة الأراضي والتنظيم العقاري عجمان" data-en="Ajman Real Estate Regulatory Agency">دائرة الأراضي والتنظيم العقاري عجمان</h5>
+                    <p><strong data-ar="تنفيذ كامل للمعيار الجديد" data-en="Complete Implementation of New Standards">تنفيذ كامل للمعيار الجديد</strong></p>
+                    <p class="mini-details" data-ar="مشروع متكامل لتطبيق نظام التصنيف العالمي بالنجوم وفق المعيار الجديد، شمل جميع المراحل من التقييم إلى التطبيق والقياس." data-en="An integrated project to implement the Global Star Rating System according to new standards, covering all phases from assessment to implementation and measurement.">مشروع متكامل لتطبيق نظام التصنيف العالمي بالنجوم وفق المعيار الجديد، شمل جميع المراحل من التقييم إلى التطبيق والقياس.</p>
+                </div>
+                <div class="small-project-card">
+                    <div class="project-num">06</div>
+                    <h5 data-ar="التدريب والتقييم" data-en="Training and Assessment">التدريب والتقييم</h5>
+                    <p><strong data-ar="هيئة الطرق والمواصلات، بلدية عجمان، بلدية أبوظبي" data-en="RTA, Ajman Municipality, Abu Dhabi Municipality">هيئة الطرق والمواصلات، بلدية عجمان، بلدية أبوظبي</strong></p>
+                    <p class="mini-details" data-ar="تقديم برامج تدريبية متخصصة وإجراء تقييمات شاملة لمراكز الخدمة في عدة جهات حكومية، لضمان الالتزام بمعايير التميز." data-en="Providing specialized training programs and conducting comprehensive assessments for service centers in multiple government entities to ensure compliance with excellence standards.">تقديم برامج تدريبية متخصصة وإجراء تقييمات شاملة لمراكز الخدمة في عدة جهات حكومية، لضمان الالتزام بمعايير التميز.</p>
+                </div>
+                <div class="small-project-card">
+                    <div class="project-num">07</div>
+                    <h5 data-ar="دائرة الأراضي والتنظيم العقاري - عجمان" data-en="Ajman Real Estate Regulatory Agency">دائرة الأراضي والتنظيم العقاري - عجمان</h5>
+                    <p><strong data-ar="تنفيذ كامل للمعيار القديم لبرنامج 7 نجوم" data-en="Complete Implementation of Old 7 Stars Program Standards">تنفيذ كامل للمعيار القديم لبرنامج 7 نجوم</strong></p>
+                    <p class="mini-details" data-ar="تطبيق المعايير الأساسية لنظام التصنيف بالنجوم، مع تطوير خطط تحسين شاملة لرفع مستوى الخدمات المقدمة." data-en="Implementing basic star rating system standards, with development of comprehensive improvement plans to elevate service levels.">تطبيق المعايير الأساسية لنظام التصنيف بالنجوم، مع تطوير خطط تحسين شاملة لرفع مستوى الخدمات المقدمة.</p>
+                </div>
+                <div class="small-project-card">
+                    <div class="project-num">08</div>
+                    <h5 data-ar="بلدية دبي" data-en="Dubai Municipality">بلدية دبي</h5>
+                    <p><strong data-ar="برنامج 7 نجوم-1 مركز DGEP وتحسين 14 خدمة - 2020" data-en="7 Stars Program - 1 DGEP Center and 14 Services Improvement - 2020">برنامج 7 نجوم-1 مركز DGEP وتحسين 14 خدمة - 2020</strong></p>
+                    <p class="mini-details" data-ar="مشروع مزدوج يجمع بين تطبيق نظام التصنيف بالنجوم ومشروع التميز الحكومي، مع إعادة هندسة وتحسين 14 خدمة حكومية رئيسية." data-en="A dual project combining star rating system implementation and government excellence project, with reengineering and improving 14 key government services.">مشروع مزدوج يجمع بين تطبيق نظام التصنيف بالنجوم ومشروع التميز الحكومي، مع إعادة هندسة وتحسين 14 خدمة حكومية رئيسية.</p>
+                </div>
+                <div class="small-project-card">
+                    <div class="project-num">09</div>
+                    <h5 data-ar="وزارة الداخلية" data-en="Ministry of Interior">وزارة الداخلية</h5>
+                    <p><strong data-ar="13 مركز شرطة ورسم 24 خدمة وتحسينها - 2020/2021" data-en="13 Police Stations and Mapping & Improving 24 Services - 2020/2021">13 مركز شرطة ورسم 24 خدمة وتحسينها - 2020/2021</strong></p>
+                    <p class="mini-details" data-ar="مشروع واسع النطاق شمل تطبيق نظام التصنيف بالنجوم على 13 مركز شرطة، مع رسم وتحليل وتحسين 24 خدمة أمنية وشرطية." data-en="Large-scale project implementing star rating system on 13 police stations, with mapping, analysis and improvement of 24 security and police services.">مشروع واسع النطاق شمل تطبيق نظام التصنيف بالنجوم على 13 مركز شرطة، مع رسم وتحليل وتحسين 24 خدمة أمنية وشرطية.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 11: Previous Experience & Certifications -->
+    <section id="certifications" class="certifications-section">
+        <div class="container">
+            <div class="two-column-layout">
+                <div class="previous-experience-column">
+                    <h2 class="section-title" data-ar="الخبرة السابقة" data-en="Previous Experience">الخبرة السابقة</h2>
+                    <div class="previous-jobs">
+                        <div class="previous-job-card">
+                            <div class="job-number">01</div>
+                            <h4 data-ar="PDCA للاستشارات الإدارية" data-en="PDCA Management Consultancy">PDCA للاستشارات الإدارية</h4>
+                            <p class="job-role" data-ar="مستشار التميز المؤسسي" data-en="Organizational Excellence Consultant">مستشار التميز المؤسسي</p>
+                            <p class="job-date">2016 - 2017</p>
+                            <p class="job-description" data-ar="تقديم استشارات متخصصة في مجالات التميز المؤسسي وإدارة الجودة للجهات الحكومية والخاصة، مع التركيز على تطبيق نماذج التميز العالمية والمحلية." data-en="Providing specialized consultancy in organizational excellence and quality management for government and private entities, focusing on implementing global and local excellence models.">تقديم استشارات متخصصة في مجالات التميز المؤسسي وإدارة الجودة للجهات الحكومية والخاصة، مع التركيز على تطبيق نماذج التميز العالمية والمحلية.</p>
+                        </div>
+                        <div class="previous-job-card">
+                            <div class="job-number">02</div>
+                            <h4 data-ar="أساتذة التميز المؤسسي الدولي" data-en="International Organizational Excellence Professors">أساتذة التميز المؤسسي الدولي</h4>
+                            <p class="job-role" data-ar="مستشار التميز" data-en="Excellence Consultant">مستشار التميز</p>
+                            <p class="job-date">2015 - 2016</p>
+                            <p class="job-description" data-ar="العمل كمستشار تميز مؤسسي، مع التركيز على تطوير أنظمة إدارة الأداء وتطبيق معايير التميز في مختلف القطاعات." data-en="Working as an organizational excellence consultant, focusing on developing performance management systems and implementing excellence standards across various sectors.">العمل كمستشار تميز مؤسسي، مع التركيز على تطوير أنظمة إدارة الأداء وتطبيق معايير التميز في مختلف القطاعات.</p>
+                        </div>
+                        <div class="previous-job-card">
+                            <div class="job-number">03</div>
+                            <h4 data-ar="منسق مشاريع" data-en="Project Coordinator">منسق مشاريع</h4>
+                            <p class="job-date">2014 - 2015</p>
+                            <p class="job-description" data-ar="تنسيق وإدارة المشاريع الاستشارية، مع المساهمة في تطوير المنهجيات وأدوات العمل الاستشارية." data-en="Coordinating and managing consulting projects, while contributing to the development of methodologies and consulting work tools.">تنسيق وإدارة المشاريع الاستشارية، مع المساهمة في تطوير المنهجيات وأدوات العمل الاستشارية.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="certifications-column">
+                    <h2 class="section-title" data-ar="الدورات التدريبية والشهادات المهنية" data-en="Training Courses & Professional Certifications">الدورات التدريبية والشهادات المهنية</h2>
+                    <div class="cert-categories">
+                        <div class="cert-category">
+                            <h4 data-ar="الإبداع والابتكار" data-en="Creativity & Innovation"><i class="fas fa-lightbulb"></i> الإبداع والابتكار</h4>
+                            <ul>
+                                <li data-ar="التفكير التصميمي (Design Thinking) - مستوى متقدم" data-en="Design Thinking - Advanced Level">التفكير التصميمي (Design Thinking) - مستوى متقدم</li>
+                                <li data-ar="إدارة الابتكار والتحول الرقمي" data-en="Innovation Management & Digital Transformation">إدارة الابتكار والتحول الرقمي</li>
+                                <li data-ar="منهجيات الابتكار المؤسسي وإدارة الأفكار" data-en="Organizational Innovation Methodologies & Idea Management">منهجيات الابتكار المؤسسي وإدارة الأفكار</li>
+                                <li data-ar="تصميم تجربة المستخدم (UX Design)" data-en="User Experience Design (UX Design)">تصميم تجربة المستخدم (UX Design)</li>
+                                <li data-ar="الابتكار المفتوح والشراكات الاستراتيجية" data-en="Open Innovation & Strategic Partnerships">الابتكار المفتوح والشراكات الاستراتيجية</li>
+                            </ul>
+                        </div>
+                        <div class="cert-category">
+                            <h4 data-ar="إدارة المخاطر والمشاريع" data-en="Risk & Project Management"><i class="fas fa-exclamation-triangle"></i> إدارة المخاطر والمشاريع</h4>
+                            <ul>
+                                <li data-ar="إدارة المخاطر المؤسسية (Enterprise Risk Management - ERM)" data-en="Enterprise Risk Management (ERM)">إدارة المخاطر المؤسسية (Enterprise Risk Management - ERM)</li>
+                                <li data-ar="PMP - Project Management Professional (التحضير للشهادة)" data-en="PMP - Project Management Professional (Preparation)">PMP - Project Management Professional (التحضير للشهادة)</li>
+                                <li>PRINCE2 Foundation & Practitioner</li>
+                                <li data-ar="إدارة المحافظ والبرامج (Portfolio & Program Management)" data-en="Portfolio & Program Management">إدارة المحافظ والبرامج (Portfolio & Program Management)</li>
+                                <li data-ar="منهجيات إدارة المشاريع الحديثة" data-en="Modern Project Management Methodologies">منهجيات إدارة المشاريع الحديثة</li>
+                            </ul>
+                        </div>
+                        <div class="cert-category">
+                            <h4 data-ar="إدارة المشاريع الرشيقة وسكرم" data-en="Agile Project Management & Scrum"><i class="fas fa-users-cog"></i> إدارة المشاريع الرشيقة وسكرم</h4>
+                            <ul>
+                                <li>Certified Scrum Master (CSM)</li>
+                                <li data-ar="Agile Project Management - مستوى متقدم" data-en="Agile Project Management - Advanced Level">Agile Project Management - مستوى متقدم</li>
+                                <li>Lean Six Sigma Green Belt</li>
+                                <li>Kanban System Design</li>
+                                <li>SAFe (Scaled Agile Framework) Fundamentals</li>
+                            </ul>
+                        </div>
+                        <div class="cert-category">
+                            <h4 data-ar="الاستراتيجية والأداء" data-en="Strategy & Performance"><i class="fas fa-chess"></i> الاستراتيجية والأداء</h4>
+                            <ul>
+                                <li data-ar="بطاقة الأداء المتوازن (Balanced Scorecard - BSC)" data-en="Balanced Scorecard (BSC)">بطاقة الأداء المتوازن (Balanced Scorecard - BSC)</li>
+                                <li data-ar="التخطيط الاستراتيجي المتقدم والتفكير الاستراتيجي" data-en="Advanced Strategic Planning & Strategic Thinking">التخطيط الاستراتيجي المتقدم والتفكير الاستراتيجي</li>
+                                <li data-ar="إدارة الأداء المؤسسي وتصميم مؤشرات الأداء" data-en="Organizational Performance Management & KPI Design">إدارة الأداء المؤسسي وتصميم مؤشرات الأداء</li>
+                                <li data-ar="تطوير ومراجعة الاستراتيجيات المؤسسية" data-en="Developing & Reviewing Organizational Strategies">تطوير ومراجعة الاستراتيجيات المؤسسية</li>
+                                <li data-ar="نماذج التميز المؤسسي (EFQM, Baldrige, GEM)" data-en="Organizational Excellence Models (EFQM, Baldrige, GEM)">نماذج التميز المؤسسي (EFQM, Baldrige, GEM)</li>
+                            </ul>
+                        </div>
+                        <div class="cert-category">
+                            <h4 data-ar="تجربة العميل وإدارة الجودة" data-en="Customer Experience & Quality Management"><i class="fas fa-users"></i> تجربة العميل وإدارة الجودة</h4>
+                            <ul>
+                                <li data-ar="إدارة تجربة العميل (Customer Experience Management)" data-en="Customer Experience Management (CEM)">إدارة تجربة العميل (Customer Experience Management)</li>
+                                <li data-ar="نظام التصنيف العالمي بالنجوم - خبير معتمد" data-en="Global Star Rating System - Certified Expert">نظام التصنيف العالمي بالنجوم - خبير معتمد</li>
+                                <li data-ar="ISO 9001:2015 - نظام إدارة الجودة" data-en="ISO 9001:2015 - Quality Management System">ISO 9001:2015 - نظام إدارة الجودة</li>
+                                <li data-ar="ISO 10002 - إدارة شكاوى العملاء" data-en="ISO 10002 - Customer Complaint Management">ISO 10002 - إدارة شكاوى العملاء</li>
+                                <li data-ar="قياس رضا العملاء وتحليل البيانات" data-en="Customer Satisfaction Measurement & Data Analysis">قياس رضا العملاء وتحليل البيانات</li>
+                            </ul>
+                        </div>
+                        <div class="cert-category">
+                            <h4 data-ar="القيادة والتطوير المهني" data-en="Leadership & Professional Development"><i class="fas fa-graduation-cap"></i> القيادة والتطوير المهني</h4>
+                            <ul>
+                                <li data-ar="القيادة التحويلية والإدارية" data-en="Transformational & Managerial Leadership">القيادة التحويلية والإدارية</li>
+                                <li data-ar="إدارة التغيير المؤسسي" data-en="Organizational Change Management">إدارة التغيير المؤسسي</li>
+                                <li data-ar="بناء وقيادة الفرق عالية الأداء" data-en="Building & Leading High-Performance Teams">بناء وقيادة الفرق عالية الأداء</li>
+                                <li data-ar="التدريب والتطوير المهني (Train the Trainer)" data-en="Train the Trainer">التدريب والتطوير المهني (Train the Trainer)</li>
+                                <li data-ar="التواصل الفعال ومهارات العرض والتقديم" data-en="Effective Communication & Presentation Skills">التواصل الفعال ومهارات العرض والتقديم</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 12: Skills & Competencies -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2 class="section-title" data-ar="المهارات الأساسية والكفاءات المتخصصة" data-en="Core Skills & Specialized Competencies">المهارات الأساسية والكفاءات المتخصصة</h2>
+            <p class="section-intro" data-ar="مجموعة متنوعة وشاملة من المهارات التقنية والإدارية والقيادية المكتسبة عبر أكثر من 12 عاماً من الخبرة العملية المكثفة مع أبرز المؤسسات الحكومية الرائدة في منطقة الخليج العربي." data-en="A diverse and comprehensive set of technical, management, and leadership skills acquired over more than 12 years of intensive practical experience with the leading government institutions in the Arabian Gulf region.">مجموعة متنوعة وشاملة من المهارات التقنية والإدارية والقيادية المكتسبة عبر أكثر من 12 عاماً من الخبرة العملية المكثفة مع أبرز المؤسسات الحكومية الرائدة في منطقة الخليج العربي.</p>
+
+            <div class="skills-grid">
+                <div class="skill-category-card">
+                    <div class="skill-icon"><i class="fas fa-tools"></i></div>
+                    <h3 data-ar="إدارة المشاريع وتحسين الخدمات" data-en="Project Management & Service Improvement">إدارة المشاريع وتحسين الخدمات</h3>
+                    <ul>
+                        <li data-ar="إدارة المشاريع الاستشارية الكبرى والمعقدة" data-en="Managing Large & Complex Consulting Projects">إدارة المشاريع الاستشارية الكبرى والمعقدة</li>
+                        <li data-ar="إعادة هندسة العمليات والخدمات الحكومية (BPR)" data-en="Business Process Reengineering (BPR)">إعادة هندسة العمليات والخدمات الحكومية (BPR)</li>
+                        <li data-ar="رسم وتحليل رحلة العميل (Customer Journey Mapping)" data-en="Customer Journey Mapping">رسم وتحليل رحلة العميل (Customer Journey Mapping)</li>
+                        <li data-ar="تحليل وتحسين تجربة المستخدم (UX Analysis)" data-en="User Experience (UX) Analysis">تحليل وتحسين تجربة المستخدم (UX Analysis)</li>
+                        <li data-ar="تصميم الخدمات (Service Design)" data-en="Service Design">تصميم الخدمات (Service Design)</li>
+                        <li data-ar="إدارة التغيير المؤسسي (Change Management)" data-en="Change Management">إدارة التغيير المؤسسي (Change Management)</li>
+                        <li data-ar="قياس وتحسين مستويات الخدمة (SLA)" data-en="Service Level Agreement (SLA) Management">قياس وتحسين مستويات الخدمة (SLA)</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category-card">
+                    <div class="skill-icon"><i class="fas fa-bullseye"></i></div>
+                    <h3 data-ar="الاستراتيجية ومؤشرات الأداء" data-en="Strategy & Performance Indicators">الاستراتيجية ومؤشرات الأداء</h3>
+                    <ul>
+                        <li data-ar="تطوير الاستراتيجيات المؤسسية والقطاعية" data-en="Developing Organizational & Sectoral Strategies">تطوير الاستراتيجيات المؤسسية والقطاعية</li>
+                        <li data-ar="بطاقة الأداء المتوازن (Balanced Scorecard)" data-en="Balanced Scorecard">بطاقة الأداء المتوازن (Balanced Scorecard)</li>
+                        <li data-ar="تصميم وتطوير مؤشرات الأداء الرئيسية (KPIs)" data-en="KPIs Design & Development">تصميم وتطوير مؤشرات الأداء الرئيسية (KPIs)</li>
+                        <li data-ar="إدارة الأداء المؤسسي والفردي" data-en="Organizational & Individual Performance Management">إدارة الأداء المؤسسي والفردي</li>
+                        <li data-ar="التخطيط الاستراتيجي والتشغيلي" data-en="Strategic & Operational Planning">التخطيط الاستراتيجي والتشغيلي</li>
+                        <li data-ar="تحليل الفجوات الاستراتيجية (Gap Analysis)" data-en="Strategic Gap Analysis">تحليل الفجوات الاستراتيجية (Gap Analysis)</li>
+                        <li data-ar="قياس الأثر والنتائج (Impact Measurement)" data-en="Impact Measurement">قياس الأثر والنتائج (Impact Measurement)</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category-card">
+                    <div class="skill-icon"><i class="fas fa-smile"></i></div>
+                    <h3 data-ar="تجربة العميل والبحوث" data-en="Customer Experience & Research">تجربة العميل والبحوث</h3>
+                    <ul>
+                        <li data-ar="تصميم وتنفيذ استطلاعات رضا العملاء" data-en="Designing & Implementing Customer Satisfaction Surveys">تصميم وتنفيذ استطلاعات رضا العملاء</li>
+                        <li data-ar="تحليل البيانات والإحصائيات المتقدمة" data-en="Advanced Data & Statistics Analysis">تحليل البيانات والإحصائيات المتقدمة</li>
+                        <li data-ar="قياس مؤشر صافي الترويج (Net Promoter Score - NPS)" data-en="Net Promoter Score (NPS) Measurement">قياس مؤشر صافي الترويج (Net Promoter Score - NPS)</li>
+                        <li data-ar="قياس رضا العملاء (CSAT) وجهد العميل (CES)" data-en="CSAT & Customer Effort Score (CES) Measurement">قياس رضا العملاء (CSAT) وجهد العميل (CES)</li>
+                        <li data-ar="تحليل سلوك العملاء وأنماطهم" data-en="Customer Behavior & Pattern Analysis">تحليل سلوك العملاء وأنماطهم</li>
+                        <li data-ar="إدارة برامج صوت العميل (Voice of Customer)" data-en="Voice of Customer (VoC) Program Management">إدارة برامج صوت العميل (Voice of Customer)</li>
+                        <li data-ar="تطوير شخصيات العملاء (Customer Personas)" data-en="Customer Personas Development">تطوير شخصيات العملاء (Customer Personas)</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category-card">
+                    <div class="skill-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3 data-ar="إدارة المخاطر والتحسين المستمر" data-en="Risk Management & Continuous Improvement">إدارة المخاطر والتحسين المستمر</h3>
+                    <ul>
+                        <li data-ar="تحديد وتقييم وإدارة المخاطر المؤسسية" data-en="Organizational Risk Identification, Assessment & Management">تحديد وتقييم وإدارة المخاطر المؤسسية</li>
+                        <li data-ar="منهجيات التحسين المستمر (Kaizen, PDCA)" data-en="Continuous Improvement Methodologies (Kaizen, PDCA)">منهجيات التحسين المستمر (Kaizen, PDCA)</li>
+                        <li>Six Sigma & Lean Management</li>
+                        <li data-ar="إدارة التغيير المؤسسي والثقافة التنظيمية" data-en="Organizational Change & Culture Management">إدارة التغيير المؤسسي والثقافة التنظيمية</li>
+                        <li data-ar="إدارة الأزمات والاستمرارية" data-en="Crisis & Business Continuity Management">إدارة الأزمات والاستمرارية</li>
+                        <li data-ar="تحليل الأسباب الجذرية (Root Cause Analysis)" data-en="Root Cause Analysis">تحليل الأسباب الجذرية (Root Cause Analysis)</li>
+                        <li data-ar="تطوير خطط التحسين والمعالجة" data-en="Developing Improvement & Remediation Plans">تطوير خطط التحسين والمعالجة</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category-card">
+                    <div class="skill-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <h3 data-ar="التدريب والتطوير المؤسسي" data-en="Training & Organizational Development">التدريب والتطوير المؤسسي</h3>
+                    <ul>
+                        <li data-ar="تصميم وتطوير البرامج التدريبية المتخصصة" data-en="Designing & Developing Specialized Training Programs">تصميم وتطوير البرامج التدريبية المتخصصة</li>
+                        <li data-ar="تقديم ورش العمل والدورات التدريبية" data-en="Delivering Workshops & Training Courses">تقديم ورش العمل والدورات التدريبية</li>
+                        <li data-ar="بناء القدرات المؤسسية والفردية" data-en="Building Organizational & Individual Capabilities">بناء القدرات المؤسسية والفردية</li>
+                        <li data-ar="التدريب على معايير التميز والجودة" data-en="Training on Excellence & Quality Standards">التدريب على معايير التميز والجودة</li>
+                        <li data-ar="تطوير المدربين (Train the Trainer)" data-en="Train the Trainer">تطوير المدربين (Train the Trainer)</li>
+                        <li data-ar="التوجيه والإرشاد المهني (Coaching & Mentoring)" data-en="Coaching & Mentoring">التوجيه والإرشاد المهني (Coaching & Mentoring)</li>
+                        <li data-ar="تقييم فعالية التدريب وقياس الأثر" data-en="Training Effectiveness Evaluation & Impact Measurement">تقييم فعالية التدريب وقياس الأثر</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category-card">
+                    <div class="skill-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3 data-ar="التقنية والأدوات" data-en="Technology & Tools">التقنية والأدوات</h3>
+                    <ul>
+                        <li data-ar="Microsoft Office Suite (Word, Excel, PowerPoint, Visio) - مستوى متقدم" data-en="Microsoft Office Suite (Word, Excel, PowerPoint, Visio) - Advanced Level">Microsoft Office Suite (Word, Excel, PowerPoint, Visio) - مستوى متقدم</li>
+                        <li data-ar="أدوات إدارة المشاريع (MS Project, Primavera, Trello, Asana)" data-en="Project Management Tools (MS Project, Primavera, Trello, Asana)">أدوات إدارة المشاريع (MS Project, Primavera, Trello, Asana)</li>
+                        <li data-ar="أدوات التحليل والتصور (Power BI, Tableau, Excel Advanced)" data-en="Analysis & Visualization Tools (Power BI, Tableau, Excel Advanced)">أدوات التحليل والتصور (Power BI, Tableau, Excel Advanced)</li>
+                        <li data-ar="أدوات التصميم والعرض (Adobe Creative Suite, Canva)" data-en="Design & Presentation Tools (Adobe Creative Suite, Canva)">أدوات التصميم والعرض (Adobe Creative Suite, Canva)</li>
+                        <li data-ar="أنظمة إدارة المستندات والجودة" data-en="Document & Quality Management Systems">أنظمة إدارة المستندات والجودة</li>
+                        <li data-ar="أدوات الاستطلاعات وجمع البيانات (SurveyMonkey, Google Forms)" data-en="Survey & Data Collection Tools (SurveyMonkey, Google Forms)">أدوات الاستطلاعات وجمع البيانات (SurveyMonkey, Google Forms)</li>
+                        <li data-ar="منصات التعاون والعمل عن بعد (Teams, Zoom, Slack)" data-en="Collaboration & Remote Work Platforms (Teams, Zoom, Slack)">منصات التعاون والعمل عن بعد (Teams, Zoom, Slack)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="deliverables" class="deliverables-section">
+                <h3 data-ar="المخرجات المشتركة في المشاريع الاستشارية" data-en="Common Deliverables in Consulting Projects"><i class="fas fa-clipboard-check"></i> <span data-ar="المخرجات المشتركة في المشاريع الاستشارية" data-en="Common Deliverables in Consulting Projects">المخرجات المشتركة في المشاريع الاستشارية</span></h3>
+                <p class="deliverables-intro" data-ar="مجموعة شاملة من المخرجات والوثائق المؤسسية التي يتم تطويرها خلال المشاريع الاستشارية لضمان الاستدامة ونقل المعرفة:" data-en="Comprehensive set of outputs and institutional documents developed during consulting projects to ensure sustainability and knowledge transfer:">مجموعة شاملة من المخرجات والوثائق المؤسسية التي يتم تطويرها خلال المشاريع الاستشارية لضمان الاستدامة ونقل المعرفة:</p>
+                <div class="deliverables-grid">
+                    <div class="deliverable-item"><i class="fas fa-check"></i> <span data-ar="تحليل الفجوات والتقييم التشخيصي الشامل" data-en="Gap Analysis & Comprehensive Diagnostic Assessment">تحليل الفجوات والتقييم التشخيصي الشامل</span></div>
+                    <div class="deliverable-item"><i class="fas fa-check"></i> <span data-ar="رسم وتحليل وتحسين رحلة العميل" data-en="Customer Journey Mapping, Analysis & Improvement">رسم وتحليل وتحسين رحلة العميل</span></div>
+                    <div class="deliverable-item"><i class="fas fa-check"></i> <span data-ar="استراتيجية تطوير وتحسين الخدمات" data-en="Service Development & Improvement Strategy">استراتيجية تطوير وتحسين الخدمات</span></div>
+                    <div class="deliverable-item"><i class="fas fa-check"></i> <span data-ar="تطوير وتفعيل ميثاق المتعاملين" data-en="Customer Charter Development & Activation">تطوير وتفعيل ميثاق المتعاملين</span></div>
+                    <div class="deliverable-item"><i class="fas fa-check"></i> <span data-ar="منهجية إشراك أصحاب المصلحة والشركاء" data-en="Stakeholder & Partner Engagement Methodology">منهجية إشراك أصحاب المصلحة والشركاء</span></div>
+                    <div class="deliverable-item"><i class="fas fa-check"></i> <span data-ar="برامج المكافآت والتقدير والتوجيه" data-en="Rewards, Recognition & Guidance Programs">برامج المكافآت والتقدير والتوجيه</span></div>
+                    <div class="deliverable-item"><i class="fas fa-check"></i> <span data-ar="تقسيم العملاء واتفاقيات مستوى الخدمة (SLA)" data-en="Customer Segmentation & Service Level Agreements (SLA)">تقسيم العملاء واتفاقيات مستوى الخدمة (SLA)</span></div>
+                    <div class="deliverable-item"><i class="fas fa-check"></i> <span data-ar="مبادرات وخطط تحسين الخدمات" data-en="Service Improvement Initiatives & Plans">مبادرات وخطط تحسين الخدمات</span></div>
+                    <div class="deliverable-item"><i class="fas fa-check"></i> <span data-ar="خطة التشغيل ومؤشرات الأداء الرئيسية" data-en="Operations Plan & Key Performance Indicators">خطة التشغيل ومؤشرات الأداء الرئيسية</span></div>
+                    <div class="deliverable-item"><i class="fas fa-check"></i> <span data-ar="تقييم وتصنيف الخدمات حسب المعايير" data-en="Service Evaluation & Classification by Standards">تقييم وتصنيف الخدمات حسب المعايير</span></div>
+                    <div class="deliverable-item"><i class="fas fa-check"></i> <span data-ar="دليل معايير خدمة العملاء والسياسات" data-en="Customer Service Standards & Policies Manual">دليل معايير خدمة العملاء والسياسات</span></div>
+                    <div class="deliverable-item"><i class="fas fa-check"></i> <span data-ar="برامج التدريب والتطوير المتخصصة" data-en="Specialized Training & Development Programs">برامج التدريب والتطوير المتخصصة</span></div>
+                    <div class="deliverable-item"><i class="fas fa-check"></i> <span data-ar="أدلة الإجراءات والعمليات التشغيلية" data-en="Procedures & Operational Processes Manuals">أدلة الإجراءات والعمليات التشغيلية</span></div>
+                    <div class="deliverable-item"><i class="fas fa-check"></i> <span data-ar="أنظمة القياس والمتابعة والتقارير" data-en="Measurement, Follow-up & Reporting Systems">أنظمة القياس والمتابعة والتقارير</span></div>
+                    <div class="deliverable-item"><i class="fas fa-check"></i> <span data-ar="خطط الاستدامة والتحسين المستمر" data-en="Sustainability & Continuous Improvement Plans">خطط الاستدامة والتحسين المستمر</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 13: Awards & Recognition -->
+    <section id="awards" class="awards-section">
+        <div class="container">
+            <h2 class="section-title" data-ar="الجوائز والتقديرات المهنية" data-en="Awards & Professional Recognition">الجوائز والتقديرات المهنية</h2>
+            <div class="awards-grid">
+                <div class="award-card featured">
+                    <div class="award-badge">01</div>
+                    <div class="award-icon"><i class="fas fa-trophy"></i></div>
+                    <h3 data-ar="شهادة تقدير من وزير الداخلية" data-en="Certificate of Appreciation from Minister of Interior">شهادة تقدير من وزير الداخلية</h3>
+                    <p class="award-entity" data-ar="شرطة عجمان" data-en="Ajman Police">شرطة عجمان</p>
+                    <p class="award-year">2025</p>
+                    <p class="award-description" data-ar="تقديراً للجهود المتميزة في تطبيق برنامج 7 نجوم وتحقيق نتائج استثنائية في تحسين الخدمات." data-en="In recognition of distinguished efforts in implementing 7 Stars program and achieving exceptional results in service improvement.">تقديراً للجهود المتميزة في تطبيق برنامج 7 نجوم وتحقيق نتائج استثنائية في تحسين الخدمات.</p>
+                </div>
+
+                <div class="award-card">
+                    <div class="award-badge">02</div>
+                    <div class="award-icon"><i class="fas fa-award"></i></div>
+                    <h3 data-ar="جوائز داخلية من إيثوس" data-en="Internal Awards from Ethos">جوائز داخلية من إيثوس</h3>
+                    <ul class="awards-list">
+                        <li data-ar="جائزة البطل المجهول" data-en="Unsung Hero Award">جائزة البطل المجهول</li>
+                        <li data-ar="أفضل موظف" data-en="Best Employee">أفضل موظف</li>
+                        <li data-ar="موظف العام 2020" data-en="Employee of the Year 2020">موظف العام 2020</li>
+                    </ul>
+                    <p class="award-description" data-ar="تقديراً للأداء المتميز والتفاني في العمل والمساهمة الفعالة في نجاح المشاريع." data-en="In recognition of outstanding performance, dedication to work, and effective contribution to project success.">تقديراً للأداء المتميز والتفاني في العمل والمساهمة الفعالة في نجاح المشاريع.</p>
+                </div>
+
+                <div class="award-card">
+                    <div class="award-badge">03</div>
+                    <div class="award-icon"><i class="fas fa-certificate"></i></div>
+                    <h3 data-ar="شهادات تقدير من جهات حكومية" data-en="Certificates of Appreciation from Government Entities">شهادات تقدير من جهات حكومية</h3>
+                    <ul class="awards-list">
+                        <li data-ar="بلدية دبي" data-en="Dubai Municipality">بلدية دبي</li>
+                        <li data-ar="هيئة الصحة بدبي" data-en="Dubai Health Authority">هيئة الصحة بدبي</li>
+                        <li data-ar="وزارة الداخلية" data-en="Ministry of Interior">وزارة الداخلية</li>
+                        <li data-ar="جهات حكومية أخرى" data-en="Other Government Entities">جهات حكومية أخرى</li>
+                    </ul>
+                    <p class="award-description" data-ar="شهادات تقدير متعددة من الجهات الحكومية التي تم العمل معها نظير التميز في تقديم الخدمات الاستشارية." data-en="Multiple certificates of appreciation from government entities for excellence in providing consulting services.">شهادات تقدير متعددة من الجهات الحكومية التي تم العمل معها نظير التميز في تقديم الخدمات الاستشارية.</p>
+                </div>
+            </div>
+
+            <div class="closing-statement">
+                <h3 data-ar="الالتزام بالتميز والتطوير المستمر" data-en="Commitment to Excellence and Continuous Development">الالتزام بالتميز والتطوير المستمر</h3>
+                <p data-ar="تعكس هذه الجوائز والتقديرات التزاماً راسخاً بتحقيق أعلى معايير التميز المهني والمساهمة الفعالة في تطوير الخدمات الحكومية. وتمثل دافعاً مستمراً للمزيد من الإنجازات والمساهمات في رفع مستوى الأداء المؤسسي." data-en="These awards reflect firm commitment to achieving highest professional excellence standards and effective contribution to developing government services.">تعكس هذه الجوائز والتقديرات التزاماً راسخاً بتحقيق أعلى معايير التميز المهني والمساهمة الفعالة في تطوير الخدمات الحكومية. وتمثل دافعاً مستمراً للمزيد من الإنجازات والمساهمات في رفع مستوى الأداء المؤسسي.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section - Icons Only -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title" data-ar="تواصل معي" data-en="Contact Me">تواصل معي</h2>
+            <div class="contact-icons-grid">
+                <a href="tel:0567889975" class="contact-icon-card">
+                    <i class="fas fa-phone"></i>
+                    <span data-ar="اتصل بي" data-en="Call Me">اتصل بي</span>
+                    <small>0567889975</small>
+                </a>
+                <a href="https://wa.me/971567889975" class="contact-icon-card whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    <span data-ar="واتساب" data-en="WhatsApp">واتساب</span>
+                    <small>0567889975</small>
+                </a>
+                <a href="mailto:Moein-najem@hotmail.com" class="contact-icon-card email">
+                    <i class="fas fa-envelope"></i>
+                    <span data-ar="البريد" data-en="Email">البريد</span>
+                    <small>Moein-najem@hotmail.com</small>
+                </a>
+                <a href="https://linkedin.com/in/moein-najem" class="contact-icon-card linkedin" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                    <span data-ar="لينكد إن" data-en="LinkedIn">لينكد إن</span>
+                    <small>Moein Najem</small>
+                </a>
+                <a href="https://instagram.com/moein.najem" class="contact-icon-card instagram" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                    <span data-ar="إنستغرام" data-en="Instagram">إنستغرام</span>
+                    <small>@moein.najem</small>
+                </a>
+                <div class="contact-icon-card location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span data-ar="الموقع" data-en="Location">الموقع</span>
+                    <small data-ar="دبي، الإمارات" data-en="Dubai, UAE">دبي، الإمارات</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p data-ar="© 2025 معين نجم - جميع الحقوق محفوظة" data-en="© 2025 Moein Najem - All Rights Reserved">&copy; 2025 معين نجم - جميع الحقوق محفوظة</p>
+            <p data-ar="صنع بحب للتميز" data-en="Made with ❤️ for Excellence">Made with <i class="fas fa-heart"></i> for Excellence</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
