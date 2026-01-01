@@ -3,9 +3,8 @@
 // Hide/Show header on scroll
 let lastScrollTop = 0;
 const navbar = document.querySelector('.navbar');
-const floatingHamburger = document.getElementById('floating-hamburger');
 const SCROLL_THRESHOLD = 100;
-const SCROLL_DELTA = 10;
+const SCROLL_DELTA = 5;
 
 function handleScroll() {
     const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
@@ -16,6 +15,7 @@ function handleScroll() {
     if (isAtTop) {
         navbar.classList.remove('hidden');
         navbar.classList.add('visible');
+        const floatingHamburger = document.getElementById('floating-hamburger');
         if (floatingHamburger) floatingHamburger.classList.remove('active');
         return;
     }
@@ -29,6 +29,7 @@ function handleScroll() {
             
             // Show floating hamburger on mobile
             if (window.innerWidth <= 768) {
+                const floatingHamburger = document.getElementById('floating-hamburger');
                 if (floatingHamburger) floatingHamburger.classList.add('active');
             }
         } else {
@@ -37,11 +38,12 @@ function handleScroll() {
             navbar.classList.add('visible');
             
             // Hide floating hamburger
+            const floatingHamburger = document.getElementById('floating-hamburger');
             if (floatingHamburger) floatingHamburger.classList.remove('active');
         }
+        
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
     }
-    
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
 }
 
 // Throttle scroll events
@@ -85,35 +87,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Update existing mobile menu toggle to handle floating button
 function toggleMobileMenu() {
-    const navLinks = document.querySelector('.nav-links');
-    const hamburger = document.querySelector('.hamburger-menu');
-    const backdrop = document.querySelector('.mobile-menu-backdrop');
-    const floatingHamburger = document.getElementById('floating-hamburger');
-    
-    navLinks.classList.toggle('active');
-    hamburger.classList.toggle('active');
-    
-    if (!backdrop) {
-        createMobileMenuBackdrop();
-    } else {
-        backdrop.classList.toggle('active');
-    }
-    
-    // Hide floating hamburger when menu is open
-    if (floatingHamburger && navLinks.classList.contains('active')) {
-        floatingHamburger.classList.remove('active');
+    try {
+        const navLinks = document.querySelector('.nav-links');
+        const hamburger = document.querySelector('.hamburger-menu');
+        const backdrop = document.querySelector('.mobile-menu-backdrop');
+        const floatingHamburger = document.getElementById('floating-hamburger');
+        
+        if (!navLinks || !hamburger) {
+            console.error("Mobile menu elements not found");
+            return;
+        }
+        
+        navLinks.classList.toggle('active');
+        hamburger.classList.toggle('active');
+        
+        if (!backdrop) {
+            createMobileMenuBackdrop();
+        } else {
+            backdrop.classList.toggle('active');
+        }
+        
+        // Hide floating hamburger when menu is open
+        if (floatingHamburger && navLinks.classList.contains('active')) {
+            floatingHamburger.classList.remove('active');
+        }
+    } catch (error) {
+        console.error("Error toggling mobile menu:", error);
     }
 }
 
 // Update existing close mobile menu function
 function closeMobileMenu() {
-    const navLinks = document.querySelector('.nav-links');
-    const hamburger = document.querySelector('.hamburger-menu');
-    const backdrop = document.querySelector('.mobile-menu-backdrop');
-    
-    if (navLinks) navLinks.classList.remove('active');
-    if (hamburger) hamburger.classList.remove('active');
-    if (backdrop) backdrop.classList.remove('active');
+    try {
+        const navLinks = document.querySelector('.nav-links');
+        const hamburger = document.querySelector('.hamburger-menu');
+        const backdrop = document.querySelector('.mobile-menu-backdrop');
+        
+        if (navLinks) navLinks.classList.remove('active');
+        if (hamburger) hamburger.classList.remove('active');
+        if (backdrop) backdrop.classList.remove('active');
+    } catch (error) {
+        console.error("Error closing mobile menu:", error);
+    }
 }
 
 // Close menu when clicking outside
@@ -228,76 +243,6 @@ function initScrollSpy() {
     
     sections.forEach(section => observer.observe(section));
 }
-
-
-
-// Mobile menu functionality
-function toggleMobileMenu() {
-    const navLinks = document.querySelector('.nav-links');
-    const hamburger = document.querySelector('.hamburger-menu');
-    const backdrop = document.querySelector('.mobile-menu-backdrop');
-    
-    navLinks.classList.toggle('active');
-    hamburger.classList.toggle('active');
-    
-    if (!backdrop) {
-        createMobileMenuBackdrop();
-    } else {
-        backdrop.classList.toggle('active');
-    }
-}
-
-function createMobileMenuBackdrop() {
-    const backdrop = document.createElement('div');
-    backdrop.className = 'mobile-menu-backdrop';
-    backdrop.onclick = toggleMobileMenu;
-    document.body.appendChild(backdrop);
-    backdrop.classList.add('active');
-}
-
-// Close mobile menu when clicking on a link
-document.addEventListener('DOMContentLoaded', () => {
-    const navLinks = document.querySelectorAll('.nav-links a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (window.innerWidth <= 768) {
-                toggleMobileMenu();
-            }
-        });
-    });
-    
-    // Close menu on window resize
-    window.addEventListener('resize', () => {
-        if (window.innerWidth > 768) {
-            const navLinks = document.querySelector('.nav-links');
-            const hamburger = document.querySelector('.hamburger-menu');
-            const backdrop = document.querySelector('.mobile-menu-backdrop');
-            
-            if (navLinks) navLinks.classList.remove('active');
-            if (hamburger) hamburger.classList.remove('active');
-            if (backdrop) backdrop.classList.remove('active');
-        }
-    });
-});
-
-// Also update the existing smooth scroll to close mobile menu
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute("href"));
-        if (target) {
-            target.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-            });
-            
-            // Close mobile menu if open
-            if (window.innerWidth <= 768) {
-                toggleMobileMenu();
-            }
-        }
-    });
-});
 
 
 
@@ -547,71 +492,81 @@ const translations = {
 };
 
 function toggleLanguage() {
-  const html = document.documentElement;
-  const langText = document.getElementById("lang-text");
+  try {
+    const html = document.documentElement;
+    const langText = document.getElementById("lang-text");
 
-  if (currentLang === "ar") {
-    currentLang = "en";
-    html.setAttribute("lang", "en");
-    html.setAttribute("dir", "ltr");
-    langText.textContent = "AR";
+    if (!langText) {
+      console.error("Language text element not found");
+      return;
+    }
 
-    // Update all elements with data-ar and data-en attributes
-    document.querySelectorAll("[data-ar][data-en]").forEach((el) => {
-      const enText = el.getAttribute("data-en");
-      if (enText) {
-        el.textContent = enText;
-      }
-    });
+    if (currentLang === "ar") {
+      currentLang = "en";
+      html.setAttribute("lang", "en");
+      html.setAttribute("dir", "ltr");
+      langText.textContent = "AR";
 
-    // Apply dictionary translations for elements without data attributes
-    document
-      .querySelectorAll(
-        "h4, li, p.project-details, p.project-details-small, p.mini-details, .stat-label, .section-title, h3, h5"
-      )
-      .forEach((el) => {
-        const arText = el.textContent.trim();
-        if (translations[arText]) {
-          el.setAttribute("data-original-ar", arText);
-          el.textContent = translations[arText];
+      // Update all elements with data-ar and data-en attributes
+      document.querySelectorAll("[data-ar][data-en]").forEach((el) => {
+        const enText = el.getAttribute("data-en");
+        if (enText) {
+          el.textContent = enText;
         }
       });
 
-    // Update nav brand
-    const navBrand = document.querySelector(".nav-brand");
-    if (navBrand) navBrand.textContent = "Moein Najem";
-  } else {
-    currentLang = "ar";
-    html.setAttribute("lang", "ar");
-    html.setAttribute("dir", "rtl");
-    langText.textContent = "EN";
+      // Apply dictionary translations for elements without data attributes
+      document
+        .querySelectorAll(
+          "h4, li, p.project-details, p.project-details-small, p.mini-details, .stat-label, .section-title, h3, h5"
+        )
+        .forEach((el) => {
+          const arText = el.textContent.trim();
+          if (translations[arText]) {
+            el.setAttribute("data-original-ar", arText);
+            el.textContent = translations[arText];
+          }
+        });
 
-    // Update all elements with data-ar and data-en attributes
-    document.querySelectorAll("[data-ar][data-en]").forEach((el) => {
-      const arText = el.getAttribute("data-ar");
-      if (arText) {
-        el.textContent = arText;
-      }
-    });
+      // Update nav brand
+      const navBrand = document.querySelector(".nav-brand");
+      if (navBrand) navBrand.textContent = "Moein Najem";
+    } else {
+      currentLang = "ar";
+      html.setAttribute("lang", "ar");
+      html.setAttribute("dir", "rtl");
+      langText.textContent = "EN";
 
-    // Restore original Arabic text for dictionary-translated elements
-    document.querySelectorAll("[data-original-ar]").forEach((el) => {
-      const originalAr = el.getAttribute("data-original-ar");
-      if (originalAr) {
-        el.textContent = originalAr;
-      }
-    });
+      // Update all elements with data-ar and data-en attributes
+      document.querySelectorAll("[data-ar][data-en]").forEach((el) => {
+        const arText = el.getAttribute("data-ar");
+        if (arText) {
+          el.textContent = arText;
+        }
+      });
 
-    // Update nav brand
-    const navBrand = document.querySelector(".nav-brand");
-    if (navBrand) navBrand.textContent = "معين نجم";
+      // Restore original Arabic text for dictionary-translated elements
+      document.querySelectorAll("[data-original-ar]").forEach((el) => {
+        const originalAr = el.getAttribute("data-original-ar");
+        if (originalAr) {
+          el.textContent = originalAr;
+          el.removeAttribute("data-original-ar");
+        }
+      });
+
+      // Update nav brand
+      const navBrand = document.querySelector(".nav-brand");
+      if (navBrand) navBrand.textContent = "معين نجم";
+    }
+
+    // Save preference
+    localStorage.setItem("preferredLang", currentLang);
+
+    // Re-apply any special formatting
+    applyLanguageFormatting();
+  } catch (error) {
+    console.error("Error toggling language:", error);
   }
-
-  // Save preference
-  localStorage.setItem("preferredLang", currentLang);
-
-  // Re-apply any special formatting
-  applyLanguageFormatting();
 }
 
 function applyLanguageFormatting() {
@@ -641,21 +596,13 @@ function scrollToContact() {
 
 // Download CV functionality
 function downloadCV() {
-  // Create a temporary link to trigger download
-  const link = document.createElement("a");
-  link.href = "#"; // Replace with actual PDF path when available
-
-  // For now, use print dialog as fallback
-  if (
-    confirm(
-      "هل تريد طباعة السيرة الذاتية أو حفظها كملف PDF؟\nWould you like to print the CV or save it as PDF?"
-    )
-  ) {
+  try {
+    // Trigger print dialog which allows saving as PDF
     window.print();
-  } else {
-    // Alternative: You can add actual PDF file here
+  } catch (error) {
+    console.error("Error printing CV:", error);
     alert(
-      "يمكنك حفظ هذه الصفحة كـ PDF من متصفحك\nYou can save this page as PDF from your browser\n\nCtrl+P (Windows) or Cmd+P (Mac) → Save as PDF"
+      "حدث خطأ في فتح نافذة الطباعة. يرجى استخدام Ctrl+P أو Cmd+P.\nError opening print dialog. Please use Ctrl+P or Cmd+P."
     );
   }
 }
@@ -776,12 +723,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const statCards = document.querySelectorAll(".stat-card");
   statCards.forEach((card) => statsObserver.observe(card));
 });
-
-// Mobile menu toggle (if needed in future)
-function toggleMobileMenu() {
-  const navLinks = document.querySelector(".nav-links");
-  navLinks.classList.toggle("active");
-}
 
 // Smooth scroll for all anchor links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
