@@ -12,31 +12,40 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">معين نجم</div>
-            <div class="nav-links">
-                <a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
-                <a href="#about" data-ar="نبذة" data-en="About">نبذة</a>
-                <a href="#education" data-ar="التعليم" data-en="Education">التعليم</a>
-                <a href="#experience" data-ar="الخبرات" data-en="Experience">الخبرات</a>
-                <a href="#certifications" data-ar="الشهادات" data-en="Certifications">الشهادات</a>
-                <a href="#skills" data-ar="المهارات" data-en="Skills">المهارات</a>
-                <a href="#deliverables" data-ar="المخرجات" data-en="Deliverables">المخرجات</a>
-                <a href="#awards" data-ar="الجوائز" data-en="Awards">الجوائز</a>
-                <a href="#contact" data-ar="التواصل" data-en="Contact">التواصل</a>
-            </div>
-            <div class="nav-actions">
-                <button class="btn-lang" onclick="toggleLanguage()" title="تبديل اللغة">
-                    <i class="fas fa-language"></i>
-                    <span id="lang-text">EN</span>
-                </button>
-                <button class="btn-download" onclick="downloadCV()">
-                    <i class="fas fa-download"></i> <span data-ar="تحميل السيرة الذاتية" data-en="Download CV">تحميل السيرة الذاتية</span>
-                </button>
-            </div>
+<nav class="navbar">
+    <div class="container">
+        <div class="nav-brand">معين نجم</div>
+        
+        <!-- Hamburger Menu for Mobile -->
+        <button class="hamburger-menu" onclick="toggleMobileMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <div class="nav-links">
+            <a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+            <a href="#about" data-ar="نبذة" data-en="About">نبذة</a>
+            <a href="#education" data-ar="التعليم" data-en="Education">التعليم</a>
+            <a href="#experience" data-ar="الخبرات" data-en="Experience">الخبرات</a>
+            <a href="#certifications" data-ar="الشهادات" data-en="Certifications">الشهادات</a>
+            <a href="#skills" data-ar="المهارات" data-en="Skills">المهارات</a>
+            <a href="#deliverables" data-ar="المخرجات" data-en="Deliverables">المخرجات</a>
+            <a href="#awards" data-ar="الجوائز" data-en="Awards">الجوائز</a>
+            <a href="#contact" data-ar="التواصل" data-en="Contact">التواصل</a>
         </div>
-    </nav>
+        
+        <div class="nav-actions">
+            <button class="btn-lang" onclick="toggleLanguage()" title="تبديل اللغة">
+                <i class="fas fa-language"></i>
+                <span id="lang-text">EN</span>
+            </button>
+            <button class="btn-download" onclick="downloadCV()">
+                <i class="fas fa-download"></i> <span data-ar="تحميل السيرة الذاتية" data-en="Download CV">تحميل السيرة الذاتية</span>
+            </button>
+        </div>
+    </div>
+</nav>
 
     <!-- Page 1: Hero Section with Profile -->
 <section id="home" class="hero-section">
@@ -890,5 +899,6 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
 
