@@ -1,3 +1,75 @@
+
+
+// Mobile menu functionality
+function toggleMobileMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    const hamburger = document.querySelector('.hamburger-menu');
+    const backdrop = document.querySelector('.mobile-menu-backdrop');
+    
+    navLinks.classList.toggle('active');
+    hamburger.classList.toggle('active');
+    
+    if (!backdrop) {
+        createMobileMenuBackdrop();
+    } else {
+        backdrop.classList.toggle('active');
+    }
+}
+
+function createMobileMenuBackdrop() {
+    const backdrop = document.createElement('div');
+    backdrop.className = 'mobile-menu-backdrop';
+    backdrop.onclick = toggleMobileMenu;
+    document.body.appendChild(backdrop);
+    backdrop.classList.add('active');
+}
+
+// Close mobile menu when clicking on a link
+document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                toggleMobileMenu();
+            }
+        });
+    });
+    
+    // Close menu on window resize
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            const navLinks = document.querySelector('.nav-links');
+            const hamburger = document.querySelector('.hamburger-menu');
+            const backdrop = document.querySelector('.mobile-menu-backdrop');
+            
+            if (navLinks) navLinks.classList.remove('active');
+            if (hamburger) hamburger.classList.remove('active');
+            if (backdrop) backdrop.classList.remove('active');
+        }
+    });
+});
+
+// Also update the existing smooth scroll to close mobile menu
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+            });
+            
+            // Close mobile menu if open
+            if (window.innerWidth <= 768) {
+                toggleMobileMenu();
+            }
+        }
+    });
+});
+
+
+
 // Language toggle functionality with comprehensive translations
 let currentLang = "ar";
 
@@ -621,5 +693,6 @@ window.addEventListener("load", () => {
 });
 
 console.log("السيرة الذاتية لمعين نجم - تم التحميل بنجاح ✓");
+
 
 
