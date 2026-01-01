@@ -1,3 +1,116 @@
+
+/* ===== Personal Information Styles ===== */
+.personal-info {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.info-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-3px);
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-top: 5px;
+    min-width: 30px;
+    text-align: center;
+}
+
+.info-content {
+    flex: 1;
+}
+
+.info-label {
+    display: block;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.info-value {
+    display: block;
+    font-size: 1.1rem;
+    color: var(--white);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.info-value:hover {
+    color: var(--accent-color);
+}
+
+.company-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    background: rgba(245, 158, 11, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.company-link:hover {
+    background: rgba(245, 158, 11, 0.2);
+    transform: translateX(3px);
+}
+
+.company-link i {
+    font-size: 0.9rem;
+    margin-top: 0;
+}
+
+/* Responsive adjustments for personal info */
+@media (max-width: 768px) {
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .info-item {
+        padding: 12px;
+    }
+    
+    .info-item i {
+        font-size: 1.3rem;
+    }
+    
+    .info-label {
+        font-size: 0.85rem;
+    }
+    
+    .info-value {
+        font-size: 1rem;
+    }
+}
+
+
+
+
+
+
+
 /* ===== CSS Reset & Variables ===== */
 :root {
     --primary-color: #1e3a8a;
@@ -2023,3 +2136,4 @@ html {
     max-width: 800px;
     margin: 0 auto 30px;
 }
+
