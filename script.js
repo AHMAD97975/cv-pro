@@ -1,5 +1,236 @@
 
 
+// Hide/Show header on scroll
+let lastScrollTop = 0;
+const navbar = document.querySelector('.navbar');
+const floatingHamburger = document.getElementById('floating-hamburger');
+const SCROLL_THRESHOLD = 100;
+const SCROLL_DELTA = 10;
+
+function handleScroll() {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    const isScrollingDown = currentScroll > lastScrollTop;
+    const isAtTop = currentScroll < SCROLL_THRESHOLD;
+    
+    // Always show navbar at top
+    if (isAtTop) {
+        navbar.classList.remove('hidden');
+        navbar.classList.add('visible');
+        if (floatingHamburger) floatingHamburger.classList.remove('active');
+        return;
+    }
+    
+    // Show/hide based on scroll direction
+    if (Math.abs(currentScroll - lastScrollTop) > SCROLL_DELTA) {
+        if (isScrollingDown) {
+            // Hide navbar when scrolling down
+            navbar.classList.remove('visible');
+            navbar.classList.add('hidden');
+            
+            // Show floating hamburger on mobile
+            if (window.innerWidth <= 768) {
+                if (floatingHamburger) floatingHamburger.classList.add('active');
+            }
+        } else {
+            // Show navbar when scrolling up
+            navbar.classList.remove('hidden');
+            navbar.classList.add('visible');
+            
+            // Hide floating hamburger
+            if (floatingHamburger) floatingHamburger.classList.remove('active');
+        }
+    }
+    
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+}
+
+// Throttle scroll events
+let scrollTimeout;
+function throttleScroll() {
+    if (!scrollTimeout) {
+        scrollTimeout = setTimeout(() => {
+            handleScroll();
+            scrollTimeout = null;
+        }, 100);
+    }
+}
+
+// Initialize scroll handler
+document.addEventListener('DOMContentLoaded', () => {
+    // Initial check
+    handleScroll();
+    
+    // Add scroll event listener
+    window.addEventListener('scroll', throttleScroll);
+    
+    // Hide floating hamburger when mobile menu is opened
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    if (hamburgerMenu) {
+        hamburgerMenu.addEventListener('click', () => {
+            const navLinks = document.querySelector('.nav-links');
+            if (navLinks && navLinks.classList.contains('active') && floatingHamburger) {
+                floatingHamburger.classList.remove('active');
+            }
+        });
+    }
+    
+    // Hide floating hamburger when clicking on nav links
+    const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (floatingHamburger) floatingHamburger.classList.remove('active');
+        });
+    });
+});
+
+// Update existing mobile menu toggle to handle floating button
+function toggleMobileMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    const hamburger = document.querySelector('.hamburger-menu');
+    const backdrop = document.querySelector('.mobile-menu-backdrop');
+    const floatingHamburger = document.getElementById('floating-hamburger');
+    
+    navLinks.classList.toggle('active');
+    hamburger.classList.toggle('active');
+    
+    if (!backdrop) {
+        createMobileMenuBackdrop();
+    } else {
+        backdrop.classList.toggle('active');
+    }
+    
+    // Hide floating hamburger when menu is open
+    if (floatingHamburger && navLinks.classList.contains('active')) {
+        floatingHamburger.classList.remove('active');
+    }
+}
+
+// Update existing close mobile menu function
+function closeMobileMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    const hamburger = document.querySelector('.hamburger-menu');
+    const backdrop = document.querySelector('.mobile-menu-backdrop');
+    
+    if (navLinks) navLinks.classList.remove('active');
+    if (hamburger) hamburger.classList.remove('active');
+    if (backdrop) backdrop.classList.remove('active');
+}
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    const navLinks = document.querySelector('.nav-links');
+    const hamburger = document.querySelector('.hamburger-menu');
+    const floatingHamburger = document.getElementById('floating-hamburger');
+    
+    if (navLinks && navLinks.classList.contains('active') && 
+        !navLinks.contains(e.target) && 
+        !hamburger.contains(e.target) &&
+        (!floatingHamburger || !floatingHamburger.contains(e.target))) {
+        closeMobileMenu();
+    }
+});
+
+// Handle window resize
+window.addEventListener('resize', () => {
+    // Close mobile menu on larger screens
+    if (window.innerWidth > 768) {
+        closeMobileMenu();
+        
+        // Hide floating hamburger on desktop
+        const floatingHamburger = document.getElementById('floating-hamburger');
+        if (floatingHamburger) floatingHamburger.classList.remove('active');
+    }
+});
+
+
+
+
+
+// Smooth scroll with header offset
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute("href");
+        if (targetId === "#") return;
+        
+        const target = document.querySelector(targetId);
+        if (target) {
+            // Calculate offset considering hidden header
+            const headerHeight = navbar.offsetHeight;
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = targetPosition - headerHeight;
+            
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+            });
+            
+            // Close mobile menu if open
+            if (window.innerWidth <= 768) {
+                closeMobileMenu();
+            }
+            
+            // Show header if it's hidden
+            navbar.classList.remove('hidden');
+            navbar.classList.add('visible');
+            
+            // Hide floating hamburger
+            const floatingHamburger = document.getElementById('floating-hamburger');
+            if (floatingHamburger) floatingHamburger.classList.remove('active');
+        }
+    });
+});
+
+// Detect and remove empty sections
+function removeEmptySections() {
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+        const content = section.textContent.replace(/\s+/g, '').trim();
+        if (content.length === 0 || section.innerHTML.trim() === '') {
+            section.classList.add('empty-section');
+            console.log('Removed empty section:', section.id || 'unnamed');
+        }
+    });
+}
+
+// Run on DOM content loaded
+document.addEventListener('DOMContentLoaded', () => {
+    removeEmptySections();
+    
+    // Initialize scrollspy
+    initScrollSpy();
+});
+
+// Scrollspy for active navigation
+function initScrollSpy() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    
+    const observerOptions = {
+        root: null,
+        rootMargin: '-50% 0px -50% 0px',
+        threshold: 0
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${id}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }, observerOptions);
+    
+    sections.forEach(section => observer.observe(section));
+}
+
+
+
 // Mobile menu functionality
 function toggleMobileMenu() {
     const navLinks = document.querySelector('.nav-links');
@@ -693,6 +924,7 @@ window.addEventListener("load", () => {
 });
 
 console.log("السيرة الذاتية لمعين نجم - تم التحميل بنجاح ✓");
+
 
 
 
