@@ -5,6 +5,16 @@ let currentLang = "ar";
 const translations = {
 
 
+  // Footer Translations
+  "مصمم بتفانٍ بواسطة": "Designed with passion by",
+  "نحو التميز دائماً": "Towards Excellence Always",
+  "الرئيسية": "Home",
+  "تواصل": "Contact",
+  "تحميل السيرة": "Download CV",
+  "English": "العربية",
+  "العربية": "English",
+
+
 // في ملف script.js، أضف هذه الترجمات في كائن 
   // ... الترجمات الحالية ...
   
@@ -611,4 +621,5 @@ window.addEventListener("load", () => {
 });
 
 console.log("السيرة الذاتية لمعين نجم - تم التحميل بنجاح ✓");
+
 
