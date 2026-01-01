@@ -2300,8 +2300,8 @@ html {
         width: 210mm;
         background: white !important;
         color: black !important;
-        font-size: 8pt !important;
-        line-height: 1.25 !important;
+        font-size: 9pt !important;
+        line-height: 1.3 !important;
         margin: 0 !important;
         padding: 0 !important;
     }
@@ -2310,105 +2310,96 @@ html {
     .container {
         max-width: 100% !important;
         width: 100% !important;
-        padding: 0 3mm !important;
+        padding: 0 5mm !important;
         margin: 0 !important;
     }
     
-    /* Section spacing - Each section on its own page */
+    /* Section spacing - minimize gaps */
     section {
-        padding: 5mm 0 !important;
+        padding: 3mm 0 !important;
+        margin: 0 !important;
         page-break-inside: avoid;
         break-inside: avoid;
     }
     
     /* =================================
-       PAGE BREAK STRATEGY - كل قسم في صفحة
+       PAGE BREAK STRATEGY - Optimized
        ================================= */
     
     /* Page 1: Hero + About */
     .hero-section {
         page-break-after: avoid;
-        padding: 5mm 0 !important;
+        padding: 3mm 0 !important;
+        min-height: auto !important;
     }
     
-    .about-section {
+    .profile-card-section {
         page-break-after: always;
-        padding: 3mm 0 !important;
+        padding: 2mm 0 !important;
     }
     
     /* Page 2: Competencies + Achievements */
     .competencies-section {
         page-break-before: always;
         page-break-after: avoid;
+        padding: 2mm 0 !important;
     }
     
     .achievements-section {
         page-break-after: always;
+        padding: 2mm 0 !important;
     }
     
     /* Page 3: Education */
     .education-section {
         page-break-before: always;
         page-break-after: always;
+        padding: 2mm 0 !important;
     }
     
-    /* Page 4: Current Experience */
+    /* Page 4-5: Experience Sections */
     .experience-section {
         page-break-before: always;
-        page-break-after: always;
         page-break-inside: auto;
+        padding: 2mm 0 !important;
     }
     
-    /* Page 5: Ministry Section */
-    .ministry-section {
-        page-break-before: always;
-        page-break-after: always;
-    }
-    
-    /* Page 6-7: Ethos Section */
+    /* Ministry and Ethos sections */
+    .ministry-section,
     .ethos-section {
         page-break-before: always;
-        page-break-after: always;
         page-break-inside: auto;
+        padding: 2mm 0 !important;
     }
     
-    /* Page 8: Previous Experience */
-    .previous-experience-section {
-        page-break-before: always;
-        page-break-after: always;
-    }
-    
-    /* Page 9: Certifications */
+    /* Previous Experience and Certifications */
+    .previous-experience-section,
     .certifications-section {
         page-break-before: always;
         page-break-after: always;
+        padding: 2mm 0 !important;
     }
     
-    /* Page 10: Skills */
+    /* Skills and Deliverables */
     .skills-section {
         page-break-before: always;
-        page-break-after: always;
+        page-break-inside: auto;
+        padding: 2mm 0 !important;
     }
     
-    /* Page 11: Deliverables */
-    .deliverables-section {
-        page-break-before: always;
-        page-break-after: always;
-    }
-    
-    /* Page 12: Awards + Contact */
+    /* Awards - Last page */
     .awards-section {
         page-break-before: always;
-        page-break-after: avoid;
+        padding: 2mm 0 !important;
     }
     
+    /* Hide Contact Section and Footer from PDF */
     .contact-section {
-        page-break-before: avoid;
-        page-break-after: avoid;
+        display: none !important;
     }
     
     .footer {
-        page-break-before: avoid;
+        display: none !important;
     }
     
     /* Text color enforcement */
@@ -2419,14 +2410,19 @@ html {
     
     /* Title sizing for print */
     .section-title {
-        font-size: 12pt !important;
+        font-size: 14pt !important;
         margin-bottom: 3mm !important;
         border-bottom: 0.5pt solid #000 !important;
-        padding-bottom: 1.5mm !important;
+        padding-bottom: 2mm !important;
+        margin-top: 2mm !important;
+    }
+    
+    .section-title::after {
+        display: none !important;
     }
     
     h2 {
-        font-size: 11pt !important;
+        font-size: 12pt !important;
         margin-top: 3mm !important;
         margin-bottom: 2mm !important;
     }
@@ -2438,17 +2434,24 @@ html {
     }
     
     h4 {
-        font-size: 9pt !important;
+        font-size: 9.5pt !important;
         margin-bottom: 1.5mm !important;
     }
     
     p, li {
-        font-size: 8pt !important;
-        line-height: 1.2 !important;
+        font-size: 9pt !important;
+        line-height: 1.3 !important;
         margin-bottom: 1mm !important;
     }
     
-    /* Cards and boxes */
+    .section-intro,
+    .profile-description,
+    .experience-intro {
+        font-size: 9pt !important;
+        margin-bottom: 2mm !important;
+    }
+    
+    /* Cards and boxes - Compact for PDF */
     .profile-card,
     .competency-card,
     .project-card,
@@ -2457,14 +2460,23 @@ html {
     .skill-category-card,
     .major-project-card,
     .small-project-card,
-    .certification-category {
+    .cert-category,
+    .certification-category,
+    .award-card {
         box-shadow: none !important;
-        border: 0.5pt solid #ccc !important;
+        border: 0.3pt solid #ccc !important;
         background: white !important;
         padding: 2mm !important;
-        margin-bottom: 2mm !important;
+        margin-bottom: 1.5mm !important;
         page-break-inside: avoid;
         break-inside: avoid;
+    }
+    
+    .hero-profile-card {
+        border: 0.5pt solid #000 !important;
+        padding: 3mm !important;
+        background: white !important;
+        box-shadow: none !important;
     }
     
     /* Profile image - صورة مربعة */
@@ -2528,33 +2540,48 @@ html {
     
     /* Grid layouts - optimize for print */
     .competencies-grid,
+    .stats-grid,
     .achievements-grid {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 3mm !important;
-    }
-    
-    .projects-grid {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 3mm !important;
-    }
-    
-    .skills-grid {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 3mm !important;
-    }
-    
-    .deliverables-grid {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 2mm !important;
     }
     
-    .certifications-grid {
+    .projects-grid,
+    .major-projects-grid {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
+        gap: 2mm !important;
+    }
+    
+    .skills-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 2mm !important;
+    }
+    
+    .deliverables-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 1.5mm !important;
+    }
+    
+    .additional-projects-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 1.5mm !important;
+    }
+    
+    .certifications-grid,
+    .awards-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 2mm !important;
+    }
+    
+    .two-column-layout {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
         gap: 3mm !important;
     }
     
@@ -2608,13 +2635,7 @@ html {
         margin: 1mm !important;
     }
     
-    /* Footer */
-    .footer {
-        background: white !important;
-        border-top: 1pt solid #000 !important;
-        padding: 3mm 0 !important;
-        font-size: 8pt !important;
-    }
+
     
     /* Prevent orphan titles */
     h2, h3, h4 {
