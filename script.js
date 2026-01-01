@@ -3,6 +3,21 @@ let currentLang = "ar";
 
 // Comprehensive translation dictionary
 const translations = {
+
+
+// في ملف script.js، أضف هذه الترجمات في كائن 
+  // ... الترجمات الحالية ...
+  
+  // Personal Information
+  "الهاتف": "Phone",
+  "البريد الإلكتروني": "Email",
+  "العنوان": "Location",
+  "الشركة الحالية": "Current Company",
+  "دبي، الإمارات العربية المتحدة": "Dubai, United Arab Emirates",
+  
+  // ... باقي الترجمات ...
+
+  
   // MOH Responsibilities
   "مدير مشروع إعادة هندسة الخدمات": "Service Reengineering Project Manager",
   "قيادة مشروع شامل لإعادة تصميم وتحسين 151 خدمة حكومية":
@@ -596,3 +611,4 @@ window.addEventListener("load", () => {
 });
 
 console.log("السيرة الذاتية لمعين نجم - تم التحميل بنجاح ✓");
+
